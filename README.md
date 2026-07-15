@@ -1,5 +1,7 @@
 # PAD Trade Monitor
 
+**🚀 Live Demo:** [pad-trade-monitor-lochiel.streamlit.app](https://pad-trade-monitor-lochiel.streamlit.app)
+
 An AI-assisted compliance review system for **Personal Account Dealing (PAD)** — detecting suspicious pre-news trades by employees of licensed financial firms, combining a deterministic rule engine with an LLM judgment layer.
 
 **Live sibling project:** [audit-compliance-copilot](https://github.com/lochiel-huang/audit-compliance-copilot) — the back-office counterpart (voucher anomaly detection).
