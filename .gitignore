@@ -2,7 +2,3 @@
 __pycache__/
 .venv/
 *.pyc
-llm_verdicts.json
-employees.json
-trades.json
-ground_truth.json

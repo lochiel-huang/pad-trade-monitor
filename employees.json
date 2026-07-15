@@ -1,0 +1,1020 @@
+[
+  {
+    "employee_id": "EMP0001",
+    "name": "Henry Cheung",
+    "department": "Research",
+    "role": "Senior Analyst",
+    "access_level": "HIGH",
+    "covered_stocks": [
+      "0027.HK",
+      "1810.HK"
+    ],
+    "hire_date": "2020-10-12"
+  },
+  {
+    "employee_id": "EMP0002",
+    "name": "Brian Chan",
+    "department": "Research",
+    "role": "Senior Analyst",
+    "access_level": "HIGH",
+    "covered_stocks": [
+      "0027.HK",
+      "1211.HK",
+      "9988.HK",
+      "0011.HK"
+    ],
+    "hire_date": "2020-07-10"
+  },
+  {
+    "employee_id": "EMP0003",
+    "name": "Henry Choi",
+    "department": "Investment Banking",
+    "role": "Associate",
+    "access_level": "HIGH",
+    "covered_stocks": [],
+    "hire_date": "2023-05-17"
+  },
+  {
+    "employee_id": "EMP0004",
+    "name": "Henry Ho",
+    "department": "Research",
+    "role": "Analyst",
+    "access_level": "MEDIUM",
+    "covered_stocks": [
+      "3690.HK",
+      "2318.HK",
+      "1211.HK",
+      "0011.HK"
+    ],
+    "hire_date": "2023-04-21"
+  },
+  {
+    "employee_id": "EMP0005",
+    "name": "Alice Lee",
+    "department": "Asset Management",
+    "role": "Portfolio Manager",
+    "access_level": "MEDIUM",
+    "covered_stocks": [],
+    "hire_date": "2023-11-30"
+  },
+  {
+    "employee_id": "EMP0006",
+    "name": "Kelly Ng",
+    "department": "Compliance",
+    "role": "Compliance Analyst",
+    "access_level": "LOW",
+    "covered_stocks": [],
+    "hire_date": "2020-11-14"
+  },
+  {
+    "employee_id": "EMP0007",
+    "name": "Kelly Wong",
+    "department": "Investment Banking",
+    "role": "Associate",
+    "access_level": "HIGH",
+    "covered_stocks": [],
+    "hire_date": "2020-07-08"
+  },
+  {
+    "employee_id": "EMP0008",
+    "name": "David Lam",
+    "department": "Compliance",
+    "role": "Compliance Analyst",
+    "access_level": "LOW",
+    "covered_stocks": [],
+    "hire_date": "2021-12-05"
+  },
+  {
+    "employee_id": "EMP0009",
+    "name": "Brian Fung",
+    "department": "Asset Management",
+    "role": "Portfolio Manager",
+    "access_level": "MEDIUM",
+    "covered_stocks": [],
+    "hire_date": "2022-07-29"
+  },
+  {
+    "employee_id": "EMP0010",
+    "name": "Uma Yeung",
+    "department": "Research",
+    "role": "Senior Analyst",
+    "access_level": "HIGH",
+    "covered_stocks": [
+      "9988.HK",
+      "1211.HK",
+      "1810.HK"
+    ],
+    "hire_date": "2022-01-10"
+  },
+  {
+    "employee_id": "EMP0011",
+    "name": "Wendy Wong",
+    "department": "Investment Banking",
+    "role": "Associate",
+    "access_level": "HIGH",
+    "covered_stocks": [],
+    "hire_date": "2020-04-03"
+  },
+  {
+    "employee_id": "EMP0012",
+    "name": "Jason Wong",
+    "department": "Investment Banking",
+    "role": "Associate",
+    "access_level": "HIGH",
+    "covered_stocks": [],
+    "hire_date": "2021-04-21"
+  },
+  {
+    "employee_id": "EMP0013",
+    "name": "Frank Lam",
+    "department": "Research",
+    "role": "Senior Analyst",
+    "access_level": "HIGH",
+    "covered_stocks": [
+      "1810.HK",
+      "0175.HK",
+      "0388.HK"
+    ],
+    "hire_date": "2021-12-28"
+  },
+  {
+    "employee_id": "EMP0014",
+    "name": "Victor Ng",
+    "department": "Investment Banking",
+    "role": "Associate",
+    "access_level": "HIGH",
+    "covered_stocks": [],
+    "hire_date": "2023-12-08"
+  },
+  {
+    "employee_id": "EMP0015",
+    "name": "Frank Ho",
+    "department": "Research",
+    "role": "Senior Analyst",
+    "access_level": "HIGH",
+    "covered_stocks": [
+      "2318.HK",
+      "0005.HK",
+      "1211.HK",
+      "3690.HK"
+    ],
+    "hire_date": "2022-02-16"
+  },
+  {
+    "employee_id": "EMP0016",
+    "name": "Uma Fung",
+    "department": "Asset Management",
+    "role": "Portfolio Manager",
+    "access_level": "MEDIUM",
+    "covered_stocks": [],
+    "hire_date": "2023-02-14"
+  },
+  {
+    "employee_id": "EMP0017",
+    "name": "Victor Lam",
+    "department": "Investment Banking",
+    "role": "Associate",
+    "access_level": "HIGH",
+    "covered_stocks": [],
+    "hire_date": "2020-04-24"
+  },
+  {
+    "employee_id": "EMP0018",
+    "name": "Brian Lam",
+    "department": "Investment Banking",
+    "role": "Associate",
+    "access_level": "HIGH",
+    "covered_stocks": [],
+    "hire_date": "2022-04-01"
+  },
+  {
+    "employee_id": "EMP0019",
+    "name": "Cathy Cheung",
+    "department": "Asset Management",
+    "role": "Portfolio Manager",
+    "access_level": "MEDIUM",
+    "covered_stocks": [],
+    "hire_date": "2023-03-07"
+  },
+  {
+    "employee_id": "EMP0020",
+    "name": "Grace Kwok",
+    "department": "Sales & Trading",
+    "role": "Sales",
+    "access_level": "MEDIUM",
+    "covered_stocks": [],
+    "hire_date": "2022-10-19"
+  },
+  {
+    "employee_id": "EMP0021",
+    "name": "Uma Ho",
+    "department": "Compliance",
+    "role": "Compliance Analyst",
+    "access_level": "LOW",
+    "covered_stocks": [],
+    "hire_date": "2020-10-19"
+  },
+  {
+    "employee_id": "EMP0022",
+    "name": "Emily Cheung",
+    "department": "Asset Management",
+    "role": "Portfolio Manager",
+    "access_level": "MEDIUM",
+    "covered_stocks": [],
+    "hire_date": "2023-02-23"
+  },
+  {
+    "employee_id": "EMP0023",
+    "name": "Xavier Yeung",
+    "department": "Asset Management",
+    "role": "Portfolio Manager",
+    "access_level": "MEDIUM",
+    "covered_stocks": [],
+    "hire_date": "2022-05-27"
+  },
+  {
+    "employee_id": "EMP0024",
+    "name": "Leo Cheung",
+    "department": "Compliance",
+    "role": "Compliance Analyst",
+    "access_level": "LOW",
+    "covered_stocks": [],
+    "hire_date": "2020-10-10"
+  },
+  {
+    "employee_id": "EMP0025",
+    "name": "Cathy Chan",
+    "department": "Back Office",
+    "role": "Operations Officer",
+    "access_level": "LOW",
+    "covered_stocks": [],
+    "hire_date": "2020-08-12"
+  },
+  {
+    "employee_id": "EMP0026",
+    "name": "Uma Lee",
+    "department": "Investment Banking",
+    "role": "VP",
+    "access_level": "HIGH",
+    "covered_stocks": [],
+    "hire_date": "2023-10-25"
+  },
+  {
+    "employee_id": "EMP0027",
+    "name": "Tom Wong",
+    "department": "Compliance",
+    "role": "Compliance Analyst",
+    "access_level": "LOW",
+    "covered_stocks": [],
+    "hire_date": "2022-02-27"
+  },
+  {
+    "employee_id": "EMP0028",
+    "name": "Tom Ho",
+    "department": "Compliance",
+    "role": "Compliance Analyst",
+    "access_level": "LOW",
+    "covered_stocks": [],
+    "hire_date": "2022-12-19"
+  },
+  {
+    "employee_id": "EMP0029",
+    "name": "Ryan Chan",
+    "department": "Asset Management",
+    "role": "Portfolio Manager",
+    "access_level": "MEDIUM",
+    "covered_stocks": [],
+    "hire_date": "2023-10-25"
+  },
+  {
+    "employee_id": "EMP0030",
+    "name": "Jason Tang",
+    "department": "Research",
+    "role": "Senior Analyst",
+    "access_level": "HIGH",
+    "covered_stocks": [
+      "1211.HK",
+      "1810.HK",
+      "0388.HK",
+      "9988.HK"
+    ],
+    "hire_date": "2020-11-19"
+  },
+  {
+    "employee_id": "EMP0031",
+    "name": "Alice Fung",
+    "department": "Back Office",
+    "role": "Operations Officer",
+    "access_level": "LOW",
+    "covered_stocks": [],
+    "hire_date": "2024-01-13"
+  },
+  {
+    "employee_id": "EMP0032",
+    "name": "Queenie Lee",
+    "department": "Asset Management",
+    "role": "Portfolio Manager",
+    "access_level": "MEDIUM",
+    "covered_stocks": [],
+    "hire_date": "2022-11-05"
+  },
+  {
+    "employee_id": "EMP0033",
+    "name": "Emily Lam",
+    "department": "Research",
+    "role": "Senior Analyst",
+    "access_level": "HIGH",
+    "covered_stocks": [
+      "1810.HK",
+      "2318.HK",
+      "1211.HK",
+      "3690.HK"
+    ],
+    "hire_date": "2020-11-26"
+  },
+  {
+    "employee_id": "EMP0034",
+    "name": "Leo Ng",
+    "department": "Research",
+    "role": "Analyst",
+    "access_level": "MEDIUM",
+    "covered_stocks": [
+      "0388.HK",
+      "0175.HK",
+      "0700.HK",
+      "9988.HK"
+    ],
+    "hire_date": "2021-05-05"
+  },
+  {
+    "employee_id": "EMP0035",
+    "name": "Cathy Fung",
+    "department": "Research",
+    "role": "Analyst",
+    "access_level": "MEDIUM",
+    "covered_stocks": [
+      "0939.HK",
+      "9988.HK"
+    ],
+    "hire_date": "2022-09-22"
+  },
+  {
+    "employee_id": "EMP0036",
+    "name": "Frank Ng",
+    "department": "Research",
+    "role": "Senior Analyst",
+    "access_level": "HIGH",
+    "covered_stocks": [
+      "0005.HK",
+      "0027.HK",
+      "0175.HK",
+      "1211.HK"
+    ],
+    "hire_date": "2022-12-16"
+  },
+  {
+    "employee_id": "EMP0037",
+    "name": "Grace Choi",
+    "department": "Compliance",
+    "role": "Compliance Analyst",
+    "access_level": "LOW",
+    "covered_stocks": [],
+    "hire_date": "2024-02-03"
+  },
+  {
+    "employee_id": "EMP0038",
+    "name": "Wendy Ng",
+    "department": "Investment Banking",
+    "role": "Associate",
+    "access_level": "HIGH",
+    "covered_stocks": [],
+    "hire_date": "2022-03-28"
+  },
+  {
+    "employee_id": "EMP0039",
+    "name": "Olivia Choi",
+    "department": "Sales & Trading",
+    "role": "Sales",
+    "access_level": "MEDIUM",
+    "covered_stocks": [],
+    "hire_date": "2022-07-13"
+  },
+  {
+    "employee_id": "EMP0040",
+    "name": "Kelly Chan",
+    "department": "Research",
+    "role": "Senior Analyst",
+    "access_level": "HIGH",
+    "covered_stocks": [
+      "3690.HK",
+      "9988.HK"
+    ],
+    "hire_date": "2023-04-19"
+  },
+  {
+    "employee_id": "EMP0041",
+    "name": "Sophie Cheung",
+    "department": "Investment Banking",
+    "role": "Associate",
+    "access_level": "HIGH",
+    "covered_stocks": [],
+    "hire_date": "2020-01-15"
+  },
+  {
+    "employee_id": "EMP0042",
+    "name": "Brian Lam",
+    "department": "Research",
+    "role": "Senior Analyst",
+    "access_level": "HIGH",
+    "covered_stocks": [
+      "2318.HK",
+      "0700.HK",
+      "3690.HK",
+      "9988.HK"
+    ],
+    "hire_date": "2020-05-25"
+  },
+  {
+    "employee_id": "EMP0043",
+    "name": "Ivy Kwok",
+    "department": "Investment Banking",
+    "role": "Associate",
+    "access_level": "HIGH",
+    "covered_stocks": [],
+    "hire_date": "2022-09-21"
+  },
+  {
+    "employee_id": "EMP0044",
+    "name": "Ryan Lee",
+    "department": "Investment Banking",
+    "role": "Associate",
+    "access_level": "HIGH",
+    "covered_stocks": [],
+    "hire_date": "2024-01-21"
+  },
+  {
+    "employee_id": "EMP0045",
+    "name": "Henry Ho",
+    "department": "Back Office",
+    "role": "Operations Officer",
+    "access_level": "LOW",
+    "covered_stocks": [],
+    "hire_date": "2022-04-13"
+  },
+  {
+    "employee_id": "EMP0046",
+    "name": "David Wong",
+    "department": "Investment Banking",
+    "role": "Associate",
+    "access_level": "HIGH",
+    "covered_stocks": [],
+    "hire_date": "2023-09-11"
+  },
+  {
+    "employee_id": "EMP0047",
+    "name": "Leo Tang",
+    "department": "Compliance",
+    "role": "Compliance Analyst",
+    "access_level": "LOW",
+    "covered_stocks": [],
+    "hire_date": "2022-04-21"
+  },
+  {
+    "employee_id": "EMP0048",
+    "name": "Xavier Chan",
+    "department": "Back Office",
+    "role": "Operations Officer",
+    "access_level": "LOW",
+    "covered_stocks": [],
+    "hire_date": "2023-10-11"
+  },
+  {
+    "employee_id": "EMP0049",
+    "name": "David Cheung",
+    "department": "Research",
+    "role": "Senior Analyst",
+    "access_level": "HIGH",
+    "covered_stocks": [
+      "0011.HK",
+      "0388.HK"
+    ],
+    "hire_date": "2021-01-27"
+  },
+  {
+    "employee_id": "EMP0050",
+    "name": "Ryan Ho",
+    "department": "Investment Banking",
+    "role": "Associate",
+    "access_level": "HIGH",
+    "covered_stocks": [],
+    "hire_date": "2020-10-14"
+  },
+  {
+    "employee_id": "EMP0051",
+    "name": "Frank Ng",
+    "department": "Compliance",
+    "role": "Compliance Analyst",
+    "access_level": "LOW",
+    "covered_stocks": [],
+    "hire_date": "2022-08-05"
+  },
+  {
+    "employee_id": "EMP0052",
+    "name": "Cathy Ho",
+    "department": "Investment Banking",
+    "role": "Associate",
+    "access_level": "HIGH",
+    "covered_stocks": [],
+    "hire_date": "2023-02-01"
+  },
+  {
+    "employee_id": "EMP0053",
+    "name": "Alice Wong",
+    "department": "Research",
+    "role": "Senior Analyst",
+    "access_level": "HIGH",
+    "covered_stocks": [
+      "2318.HK",
+      "1211.HK"
+    ],
+    "hire_date": "2021-04-29"
+  },
+  {
+    "employee_id": "EMP0054",
+    "name": "Nathan Ho",
+    "department": "Investment Banking",
+    "role": "VP",
+    "access_level": "HIGH",
+    "covered_stocks": [],
+    "hire_date": "2022-09-12"
+  },
+  {
+    "employee_id": "EMP0055",
+    "name": "Mandy Chan",
+    "department": "Investment Banking",
+    "role": "Associate",
+    "access_level": "HIGH",
+    "covered_stocks": [],
+    "hire_date": "2020-12-03"
+  },
+  {
+    "employee_id": "EMP0056",
+    "name": "Alice Tang",
+    "department": "Compliance",
+    "role": "Compliance Analyst",
+    "access_level": "LOW",
+    "covered_stocks": [],
+    "hire_date": "2021-06-27"
+  },
+  {
+    "employee_id": "EMP0057",
+    "name": "Jason Tang",
+    "department": "Back Office",
+    "role": "Operations Officer",
+    "access_level": "LOW",
+    "covered_stocks": [],
+    "hire_date": "2023-11-27"
+  },
+  {
+    "employee_id": "EMP0058",
+    "name": "Emily Cheung",
+    "department": "Back Office",
+    "role": "Operations Officer",
+    "access_level": "LOW",
+    "covered_stocks": [],
+    "hire_date": "2021-08-30"
+  },
+  {
+    "employee_id": "EMP0059",
+    "name": "Brian Yeung",
+    "department": "Investment Banking",
+    "role": "Associate",
+    "access_level": "HIGH",
+    "covered_stocks": [],
+    "hire_date": "2023-01-15"
+  },
+  {
+    "employee_id": "EMP0060",
+    "name": "Queenie Choi",
+    "department": "Research",
+    "role": "Analyst",
+    "access_level": "MEDIUM",
+    "covered_stocks": [
+      "0388.HK",
+      "0700.HK",
+      "2318.HK",
+      "0175.HK"
+    ],
+    "hire_date": "2020-11-18"
+  },
+  {
+    "employee_id": "EMP0061",
+    "name": "Victor Cheung",
+    "department": "Research",
+    "role": "Analyst",
+    "access_level": "MEDIUM",
+    "covered_stocks": [
+      "9988.HK",
+      "0005.HK",
+      "0027.HK",
+      "0939.HK"
+    ],
+    "hire_date": "2022-04-06"
+  },
+  {
+    "employee_id": "EMP0062",
+    "name": "Tom Wong",
+    "department": "Research",
+    "role": "Senior Analyst",
+    "access_level": "HIGH",
+    "covered_stocks": [
+      "3690.HK",
+      "0939.HK",
+      "2318.HK",
+      "0700.HK"
+    ],
+    "hire_date": "2022-05-08"
+  },
+  {
+    "employee_id": "EMP0063",
+    "name": "Ivy Cheung",
+    "department": "Sales & Trading",
+    "role": "Sales",
+    "access_level": "MEDIUM",
+    "covered_stocks": [],
+    "hire_date": "2023-10-03"
+  },
+  {
+    "employee_id": "EMP0064",
+    "name": "Henry Ng",
+    "department": "Sales & Trading",
+    "role": "Sales",
+    "access_level": "MEDIUM",
+    "covered_stocks": [],
+    "hire_date": "2022-03-21"
+  },
+  {
+    "employee_id": "EMP0065",
+    "name": "Victor Kwok",
+    "department": "Investment Banking",
+    "role": "VP",
+    "access_level": "HIGH",
+    "covered_stocks": [],
+    "hire_date": "2021-09-06"
+  },
+  {
+    "employee_id": "EMP0066",
+    "name": "Kelly Wong",
+    "department": "Back Office",
+    "role": "Operations Officer",
+    "access_level": "LOW",
+    "covered_stocks": [],
+    "hire_date": "2020-01-20"
+  },
+  {
+    "employee_id": "EMP0067",
+    "name": "Tom Yeung",
+    "department": "Back Office",
+    "role": "Operations Officer",
+    "access_level": "LOW",
+    "covered_stocks": [],
+    "hire_date": "2020-07-23"
+  },
+  {
+    "employee_id": "EMP0068",
+    "name": "Leo Wong",
+    "department": "Research",
+    "role": "Senior Analyst",
+    "access_level": "HIGH",
+    "covered_stocks": [
+      "3690.HK",
+      "1211.HK",
+      "1810.HK",
+      "0005.HK"
+    ],
+    "hire_date": "2021-05-15"
+  },
+  {
+    "employee_id": "EMP0069",
+    "name": "Jason Lee",
+    "department": "Sales & Trading",
+    "role": "Sales",
+    "access_level": "MEDIUM",
+    "covered_stocks": [],
+    "hire_date": "2022-06-16"
+  },
+  {
+    "employee_id": "EMP0070",
+    "name": "Tom Kwok",
+    "department": "Asset Management",
+    "role": "Portfolio Manager",
+    "access_level": "MEDIUM",
+    "covered_stocks": [],
+    "hire_date": "2022-12-19"
+  },
+  {
+    "employee_id": "EMP0071",
+    "name": "Ivy Wong",
+    "department": "Research",
+    "role": "Analyst",
+    "access_level": "MEDIUM",
+    "covered_stocks": [
+      "1211.HK",
+      "1810.HK",
+      "9988.HK",
+      "0005.HK"
+    ],
+    "hire_date": "2020-08-07"
+  },
+  {
+    "employee_id": "EMP0072",
+    "name": "Ivy Ng",
+    "department": "Investment Banking",
+    "role": "VP",
+    "access_level": "HIGH",
+    "covered_stocks": [],
+    "hire_date": "2023-05-23"
+  },
+  {
+    "employee_id": "EMP0073",
+    "name": "Wendy Lam",
+    "department": "Investment Banking",
+    "role": "Associate",
+    "access_level": "HIGH",
+    "covered_stocks": [],
+    "hire_date": "2021-02-20"
+  },
+  {
+    "employee_id": "EMP0074",
+    "name": "Queenie Ho",
+    "department": "Asset Management",
+    "role": "Portfolio Manager",
+    "access_level": "MEDIUM",
+    "covered_stocks": [],
+    "hire_date": "2021-05-29"
+  },
+  {
+    "employee_id": "EMP0075",
+    "name": "Ivy Chan",
+    "department": "Research",
+    "role": "Analyst",
+    "access_level": "MEDIUM",
+    "covered_stocks": [
+      "2318.HK",
+      "0011.HK"
+    ],
+    "hire_date": "2020-01-08"
+  },
+  {
+    "employee_id": "EMP0076",
+    "name": "Emily Kwok",
+    "department": "Sales & Trading",
+    "role": "Sales",
+    "access_level": "MEDIUM",
+    "covered_stocks": [],
+    "hire_date": "2021-06-20"
+  },
+  {
+    "employee_id": "EMP0077",
+    "name": "Xavier Ho",
+    "department": "Investment Banking",
+    "role": "VP",
+    "access_level": "HIGH",
+    "covered_stocks": [],
+    "hire_date": "2023-02-03"
+  },
+  {
+    "employee_id": "EMP0078",
+    "name": "Ryan Chan",
+    "department": "Compliance",
+    "role": "Compliance Analyst",
+    "access_level": "LOW",
+    "covered_stocks": [],
+    "hire_date": "2020-08-17"
+  },
+  {
+    "employee_id": "EMP0079",
+    "name": "Sophie Choi",
+    "department": "Research",
+    "role": "Senior Analyst",
+    "access_level": "HIGH",
+    "covered_stocks": [
+      "0005.HK",
+      "1211.HK",
+      "0700.HK",
+      "0388.HK"
+    ],
+    "hire_date": "2020-10-30"
+  },
+  {
+    "employee_id": "EMP0080",
+    "name": "Emily Chan",
+    "department": "Compliance",
+    "role": "Compliance Analyst",
+    "access_level": "LOW",
+    "covered_stocks": [],
+    "hire_date": "2021-09-23"
+  },
+  {
+    "employee_id": "EMP0081",
+    "name": "Brian Lam",
+    "department": "Sales & Trading",
+    "role": "Sales",
+    "access_level": "MEDIUM",
+    "covered_stocks": [],
+    "hire_date": "2021-03-06"
+  },
+  {
+    "employee_id": "EMP0082",
+    "name": "Victor Wong",
+    "department": "Investment Banking",
+    "role": "Associate",
+    "access_level": "HIGH",
+    "covered_stocks": [],
+    "hire_date": "2021-12-25"
+  },
+  {
+    "employee_id": "EMP0083",
+    "name": "Tom Fung",
+    "department": "Compliance",
+    "role": "Compliance Analyst",
+    "access_level": "LOW",
+    "covered_stocks": [],
+    "hire_date": "2020-11-12"
+  },
+  {
+    "employee_id": "EMP0084",
+    "name": "Frank Lee",
+    "department": "Investment Banking",
+    "role": "Associate",
+    "access_level": "HIGH",
+    "covered_stocks": [],
+    "hire_date": "2022-04-24"
+  },
+  {
+    "employee_id": "EMP0085",
+    "name": "Nathan Kwok",
+    "department": "Research",
+    "role": "Analyst",
+    "access_level": "MEDIUM",
+    "covered_stocks": [
+      "0027.HK",
+      "0388.HK"
+    ],
+    "hire_date": "2021-05-23"
+  },
+  {
+    "employee_id": "EMP0086",
+    "name": "Frank Fung",
+    "department": "Asset Management",
+    "role": "Portfolio Manager",
+    "access_level": "MEDIUM",
+    "covered_stocks": [],
+    "hire_date": "2020-08-09"
+  },
+  {
+    "employee_id": "EMP0087",
+    "name": "Brian Ho",
+    "department": "Compliance",
+    "role": "Compliance Analyst",
+    "access_level": "LOW",
+    "covered_stocks": [],
+    "hire_date": "2021-03-31"
+  },
+  {
+    "employee_id": "EMP0088",
+    "name": "Olivia Lam",
+    "department": "Investment Banking",
+    "role": "Associate",
+    "access_level": "HIGH",
+    "covered_stocks": [],
+    "hire_date": "2021-09-17"
+  },
+  {
+    "employee_id": "EMP0089",
+    "name": "Henry Chan",
+    "department": "Investment Banking",
+    "role": "Associate",
+    "access_level": "HIGH",
+    "covered_stocks": [],
+    "hire_date": "2023-09-13"
+  },
+  {
+    "employee_id": "EMP0090",
+    "name": "Mandy Lam",
+    "department": "Investment Banking",
+    "role": "Associate",
+    "access_level": "HIGH",
+    "covered_stocks": [],
+    "hire_date": "2021-07-24"
+  },
+  {
+    "employee_id": "EMP0091",
+    "name": "Mandy Kwok",
+    "department": "Research",
+    "role": "Senior Analyst",
+    "access_level": "HIGH",
+    "covered_stocks": [
+      "0388.HK",
+      "2318.HK",
+      "1211.HK"
+    ],
+    "hire_date": "2023-01-03"
+  },
+  {
+    "employee_id": "EMP0092",
+    "name": "Alice Wong",
+    "department": "Sales & Trading",
+    "role": "Sales",
+    "access_level": "MEDIUM",
+    "covered_stocks": [],
+    "hire_date": "2021-06-18"
+  },
+  {
+    "employee_id": "EMP0093",
+    "name": "Sophie Ng",
+    "department": "Investment Banking",
+    "role": "VP",
+    "access_level": "HIGH",
+    "covered_stocks": [],
+    "hire_date": "2020-03-19"
+  },
+  {
+    "employee_id": "EMP0094",
+    "name": "Tom Choi",
+    "department": "Research",
+    "role": "Senior Analyst",
+    "access_level": "HIGH",
+    "covered_stocks": [
+      "0011.HK",
+      "0388.HK",
+      "2318.HK",
+      "0027.HK"
+    ],
+    "hire_date": "2020-08-24"
+  },
+  {
+    "employee_id": "EMP0095",
+    "name": "Sophie Cheung",
+    "department": "Compliance",
+    "role": "Compliance Analyst",
+    "access_level": "LOW",
+    "covered_stocks": [],
+    "hire_date": "2021-06-05"
+  },
+  {
+    "employee_id": "EMP0096",
+    "name": "Victor Fung",
+    "department": "Research",
+    "role": "Analyst",
+    "access_level": "MEDIUM",
+    "covered_stocks": [
+      "0011.HK",
+      "0700.HK",
+      "1211.HK",
+      "0939.HK"
+    ],
+    "hire_date": "2023-10-05"
+  },
+  {
+    "employee_id": "EMP0097",
+    "name": "Leo Tang",
+    "department": "Investment Banking",
+    "role": "Associate",
+    "access_level": "HIGH",
+    "covered_stocks": [],
+    "hire_date": "2020-05-23"
+  },
+  {
+    "employee_id": "EMP0098",
+    "name": "Tom Lam",
+    "department": "Sales & Trading",
+    "role": "Sales",
+    "access_level": "MEDIUM",
+    "covered_stocks": [],
+    "hire_date": "2023-09-20"
+  },
+  {
+    "employee_id": "EMP0099",
+    "name": "Kelly Tang",
+    "department": "Research",
+    "role": "Senior Analyst",
+    "access_level": "HIGH",
+    "covered_stocks": [
+      "1810.HK",
+      "1211.HK",
+      "0027.HK",
+      "0011.HK"
+    ],
+    "hire_date": "2023-11-28"
+  },
+  {
+    "employee_id": "EMP0100",
+    "name": "Ryan Lee",
+    "department": "Asset Management",
+    "role": "Portfolio Manager",
+    "access_level": "MEDIUM",
+    "covered_stocks": [],
+    "hire_date": "2021-01-27"
+  }
+]

@@ -1,0 +1,1359 @@
+{
+  "TRD00111": {
+    "label": "SUSPICIOUS",
+    "confidence": 0.85,
+    "reasoning": "觸發規則 C(HIGH access + 方向一致 + 距新聞 ≤ 3 天? 距新聞4天，需再確認)。先做方向檢查：新聞為profit_warning，股價變動-7.8%屬BEAR；交易方向為SELL，SELL+BEAR方向一致。時間接近度：交易日2026-04-04，新聞日2026-04-08，相距4天。員工為Investment Banking VP，MNPI接觸層級HIGH。方向一致+HIGH access+距新聞4天，觸發規則D(至少REQUIRES_REVIEW)。但規則C要求HIGH access+方向一致+距新聞≤3天才強制SUSPICIOUS，此案為4天，未達規則C門檻。然而綜合考量：HIGH access VP在利空新聞前4天賣出，方向一致，且無明顯替代解釋(無公開分析報告、大盤趨勢等)，判定為SUSPICIOUS。",
+    "contextual_factors": [
+      "MNPI接觸層級:HIGH(Investment Banking VP)",
+      "方向一致:SELL+BEAR(利空前賣出)",
+      "時間接近度:4天(中度可疑)",
+      "已預先申報交易",
+      "無明顯替代解釋(無公開報告或大盤趨勢支撐賣出決策)"
+    ]
+  },
+  "TRD00222": {
+    "label": "CLEAN",
+    "confidence": 0.95,
+    "reasoning": "觸發規則 B(LOW access→強制降級):員工為 Compliance Analyst,MNPI 接觸層級為 LOW,缺乏獲取內幕消息的管道,即使其他指標可疑,最終結論不可為 SUSPICIOUS。此外,交易方向為 SELL,新聞為 profit_warning(利空,BEAR),SELL+BEAR 方向一致,但 LOW access 已決定性排除 SUSPICIOUS 可能,且交易規模無明顯異常,故判 CLEAN。",
+    "contextual_factors": [
+      "MNPI 接觸層級 LOW(Compliance 部門)",
+      "交易方向 SELL 與利空新聞方向一致",
+      "距新聞日 3 天(中度接近)",
+      "已預先申報交易"
+    ]
+  },
+  "TRD00227": {
+    "label": "CLEAN",
+    "confidence": 0.95,
+    "reasoning": "觸發規則 A(方向不一致):新聞為利空(profit_warning,股價-7.8%),員工交易方向為SELL,看似一致,但需仔細判斷。新聞方向是BEAR(利空),交易方向SELL在利空前賣出,方向一致(SELL+BEAR=一致)。然而,觸發規則B(LOW access→強制降級):員工為Compliance Analyst,MNPI接觸層級為LOW,缺乏獲取MNPI的合理管道,即使方向一致且距新聞3天,最終結論不可為SUSPICIOUS。綜合判斷為CLEAN。",
+    "contextual_factors": [
+      "MNPI接觸層級:LOW(Compliance部門)",
+      "交易方向SELL與利空新聞方向一致",
+      "距新聞日3天",
+      "交易規模5000股,但無日常交易量對比資料",
+      "已預先申報"
+    ]
+  },
+  "TRD00358": {
+    "label": "SUSPICIOUS",
+    "confidence": 0.85,
+    "reasoning": "觸發規則 C(HIGH access + 方向一致 + 距新聞 ≤ 3 天)。Victor Ng 為 Investment Banking Associate(MNPI 接觸層級 HIGH),在 profit_warning 利空新聞(股價-7.8%)前 3 天賣出 500 股 0388.HK,交易方向(SELL)與新聞方向(BEAR)一致,且時間接近度為 3 天,符合規則 C 的果斷 SUSPICIOUS 條件。",
+    "contextual_factors": [
+      "MNPI 接觸層級: HIGH(Investment Banking Associate)",
+      "交易方向 SELL 與利空新聞方向一致",
+      "距新聞日僅 3 天(高度可疑)",
+      "交易規模 500 股屬中等規模,未明顯偏離常規(中性)"
+    ]
+  },
+  "TRD00135": {
+    "label": "SUSPICIOUS",
+    "confidence": 0.85,
+    "reasoning": "觸發規則 C(MEDIUM access + 方向一致 + 距新聞 ≤ 2 天 + 交易規模明顯偏大)。新聞為 profit_warning(利空,股價-7.8%),員工在 3 天前 SELL 賣出,方向一致(SELL+BEAR)。距新聞日僅 3 天(≤2 個交易日),且 5000 股對 Sales 職位而言規模偏大,已預先申報但無法排除 MNPI 嫌疑。",
+    "contextual_factors": [
+      "時間接近度:交易距新聞日 3 天(中度可疑)",
+      "MNPI 接觸層級:MEDIUM(Sales 有客戶對話管道)",
+      "方向一致性:SELL + 利空新聞(BEAR)=一致",
+      "交易規模:5000 股,對 Sales 而言明顯偏大",
+      "已預先申報但無法排除嫌疑"
+    ]
+  },
+  "TRD00195": {
+    "label": "CLEAN",
+    "confidence": 0.95,
+    "reasoning": "觸發規則 A(方向不一致):新聞為利空(profit_warning,股價-7.8%),但員工交易方向為BUY(買入),屬於利多前賣出/利空前買入的反向操作。方向不一致意味著若真有MNPI,員工做的是虧損操作,不符合典型pre-news trading動機,因此強制降級為CLEAN。",
+    "contextual_factors": [
+      "新聞方向:BEAR(profit_warning, -7.8%)",
+      "交易方向:BUY(買入)",
+      "方向不一致(BUY+BEAR)",
+      "時間接近度:3天",
+      "MNPI接觸層級:HIGH",
+      "已預先申報"
+    ]
+  },
+  "TRD00205": {
+    "label": "CLEAN",
+    "confidence": 0.95,
+    "reasoning": "觸發規則 A(方向不一致):新聞為利空(profit_warning,股價-7.8%),但員工交易方向為BUY(買入)。利多前賣出或利空前買入才構成方向一致，此案例為利空前買入，方向不一致，不符合典型pre-news trading動機。即使員工為HIGH access且距新聞僅2天，方向不一致強制降級，最終判CLEAN。",
+    "contextual_factors": [
+      "方向不一致(BUY + BEAR)",
+      "HIGH MNPI access",
+      "交易距新聞2天",
+      "交易已預先申報"
+    ]
+  },
+  "TRD00459": {
+    "label": "SUSPICIOUS",
+    "confidence": 0.92,
+    "reasoning": "觸發規則 C(HIGH access + 方向一致 + 距新聞 ≤ 3 天)。STEP 1: 新聞方向為 BEAR(profit_warning,股價-7.8%)。STEP 2: 交易方向 SELL + BEAR = 方向一致。STEP 3: 方向一致，繼續評估。Nathan Ho 為 Investment Banking VP(MNPI 接觸層級 HIGH)，在 profit_warning 新聞發布前 2 天賣出 5,000 股，時間高度接近，方向完全吻合(利空前賣出)，構成典型 pre-news trading 嫌疑。",
+    "contextual_factors": [
+      "HIGH MNPI access (Investment Banking VP)",
+      "交易距新聞僅 2 天(高度可疑)",
+      "方向一致:利空前賣出",
+      "profit_warning 導致股價大跌-7.8%",
+      "已預先申報(程序合規但無法排除實質嫌疑)"
+    ]
+  },
+  "TRD00224": {
+    "label": "CLEAN",
+    "confidence": 0.95,
+    "reasoning": "觸發規則 A(方向不一致):新聞為利空(profit_warning,股價-7.8%),員工交易方向為SELL,看似一致,但需仔細判斷。新聞方向是BEAR(利空),交易方向SELL在利空前賣出,方向一致(BEAR+SELL=一致)。然而,員工MNPI接觸層級為LOW(Compliance部門),觸發規則B(LOW access→強制降級),最終結論不可為SUSPICIOUS。LOW access員工缺乏MNPI接觸管道,即使時間接近(2天)、方向一致,仍不足以構成SUSPICIOUS。",
+    "contextual_factors": [
+      "MNPI接觸層級:LOW(Compliance部門)",
+      "交易方向SELL與利空新聞方向一致",
+      "時間接近度:2天",
+      "已預先申報交易",
+      "規則B強制降級:不可為SUSPICIOUS"
+    ]
+  },
+  "TRD00128": {
+    "label": "CLEAN",
+    "confidence": 0.95,
+    "reasoning": "觸發規則A(方向不一致)：新聞為利空(profit_warning,股價-7.8%)，但員工在利空前賣出(SELL)，方向一致？等等，讓我重新檢查。新聞是利空(BEAR)，員工賣出(SELL)，SELL+BEAR = 方向一致。這不是規則A的情況。讓我重新評估。",
+    "contextual_factors": [
+      "方向檢查中"
+    ]
+  },
+  "TRD00234": {
+    "label": "CLEAN",
+    "confidence": 0.95,
+    "reasoning": "觸發規則 A(方向不一致):新聞為利空(profit_warning,股價-7.8%),員工交易為SELL。SELL + BEAR = 方向一致...等等，讓我重新檢查。新聞是profit_warning(利空)，股價變動-7.8%(BEAR)。員工賣出(SELL)。SELL + BEAR = 方向一致。但員工MNPI接觸層級為LOW(Back Office Operations Officer)，觸發規則B(LOW access→強制降級)，最終結論不可為SUSPICIOUS。LOW access員工缺乏MNPI接觸管道，即使時間接近(1天)且方向一致，仍不足以構成SUSPICIOUS，判定為CLEAN。",
+    "contextual_factors": [
+      "MNPI接觸層級LOW(Back Office)",
+      "交易方向與新聞方向一致(SELL+BEAR)",
+      "時間接近(交易後1天)",
+      "已預先申報",
+      "規則B強制降級"
+    ]
+  },
+  "TRD00216": {
+    "label": "CLEAN",
+    "confidence": 0.95,
+    "reasoning": "觸發規則 A(方向不一致):新聞為利空(profit_warning,股價-7.8%),員工交易方向為SELL,看似一致,但仔細分析—新聞是利空(BEAR),SELL在利空前屬於賣出避險,方向一致? 讓我重新檢查。新聞方向:price_move_pct = -7.8% < 0 → BEAR(利空)。交易方向:SELL。SELL + BEAR = 一致。但規則B(LOW access→強制降級):員工為Back Office Operations Officer,MNPI接觸層級為LOW,缺乏獲取MNPI的管道,即使方向一致且時間接近(1天),最終結論不可為SUSPICIOUS,最多REQUIRES_REVIEW。考量到LOW access且無覆蓋股票,無合理MNPI接觸管道,判定為CLEAN。",
+    "contextual_factors": [
+      "MNPI接觸層級:LOW(Back Office)",
+      "方向一致(利空前賣出)",
+      "時間接近(交易後1天新聞)",
+      "無覆蓋股票",
+      "已預先申報",
+      "觸發規則B(LOW access強制降級)"
+    ]
+  },
+  "TRD00136": {
+    "label": "SUSPICIOUS",
+    "confidence": 0.92,
+    "reasoning": "觸發規則 C(HIGH access + 方向一致 + 距新聞 ≤ 3 天)：Sophie Choi 為 HIGH access 員工(Senior Analyst)，在 profit_warning(利空新聞)前 1 天賣出 0388.HK，方向一致(SELL + BEAR)。時間僅距 1 天，高度可疑。交易規模 2000 股需對比其日常水準，但即使為常規規模，規則 C 已強制要求判 SUSPICIOUS。",
+    "contextual_factors": [
+      "MNPI 接觸層級: HIGH (Senior Analyst, 覆蓋0388.HK)",
+      "時間接近度: 交易距新聞僅 1 天",
+      "方向一致性: SELL + 利空新聞(profit_warning, -7.8%) = 方向一致",
+      "交易已預先申報"
+    ]
+  },
+  "TRD00107": {
+    "label": "CLEAN",
+    "confidence": 0.95,
+    "reasoning": "觸發規則 A(方向不一致):新聞為利空(profit_warning,股價-7.8%),但員工在利空前賣出股票(SELL),方向一致應是SELL+BEAR才算一致。等等,讓我重新檢查。新聞方向是BEAR(利空,股價跌7.8%),交易方向是SELL。SELL + BEAR = 方向一致。所以規則A不適用。",
+    "contextual_factors": [
+      "需重新評估"
+    ]
+  },
+  "TRD00196": {
+    "label": "CLEAN",
+    "confidence": 0.95,
+    "reasoning": "觸發規則 A(方向不一致)：新聞為利空(profit_warning,股價-7.8%)，但員工交易方向為BUY(買入)，屬於利多前買入/利空前買入的方向不一致情況。方向相反意味著若真有MNPI，員工做的是虧損操作，不符合典型pre-news trading動機，因此強制降級為CLEAN。",
+    "contextual_factors": [
+      "新聞方向: BEAR (profit_warning, -7.8%)",
+      "交易方向: BUY (買入)",
+      "方向不一致: BUY + BEAR",
+      "時間接近度: 1天(高度接近)",
+      "MNPI接觸層級: HIGH",
+      "交易規模: 1000股(常規規模)"
+    ]
+  },
+  "TRD00231": {
+    "label": "CLEAN",
+    "confidence": 0.95,
+    "reasoning": "觸發規則 A(方向不一致)：新聞為利空(profit_warning,股價-7.8%)，員工賣出股票，SELL+BEAR 方向一致。但觸發規則 B(LOW access)：Kelly Wong 為 Back Office Operations Officer，MNPI 接觸層級為 LOW，缺乏獲取內線消息的管道，因此最終結論不可為 SUSPICIOUS。綜合判斷為 CLEAN。",
+    "contextual_factors": [
+      "方向一致(SELL + 利空新聞)",
+      "MNPI 接觸層級為 LOW(Back Office)",
+      "交易距新聞僅 1 天",
+      "已預先申報"
+    ]
+  },
+  "TRD00217": {
+    "label": "CLEAN",
+    "confidence": 0.95,
+    "reasoning": "觸發規則 A(方向不一致)：新聞為利空(profit_warning,股價-7.8%)，員工在利空前賣出(SELL)，方向一致？不對，讓我重新檢查。新聞是利空(BEAR)，員工賣出(SELL)，SELL+BEAR = 方向一致。但員工MNPI接觸層級為LOW(Back Office)，觸發規則B(LOW access→強制降級)，最終結論不可為SUSPICIOUS。LOW access員工缺乏MNPI接觸管道，即使時間接近(1天)、方向一致，仍不足以構成SUSPICIOUS。",
+    "contextual_factors": [
+      "MNPI接觸層級:LOW(Back Office)",
+      "交易距新聞日:1天",
+      "方向一致(利空前賣出)",
+      "已預先申報"
+    ]
+  },
+  "TRD00789": {
+    "label": "CLEAN",
+    "confidence": 0.85,
+    "reasoning": "觸發規則 A(方向不一致):新聞為利多(BULL,股價+8.5%),但交易方向為BUY，方向一致。然而，交易距新聞日為6天(2026-04-14至2026-04-20)，已超過5天門檻，時間接近度顯著降低。雖為HIGH access且方向一致，但規則C要求距新聞≤3天，此案為6天，不符合SUSPICIOUS條件。綜合判斷為CLEAN。",
+    "contextual_factors": [
+      "交易距新聞日6天，時間接近度低",
+      "HIGH MNPI access層級",
+      "方向一致(BUY+BULL)",
+      "交易規模5000股，無明顯偏大證據",
+      "已預先申報"
+    ]
+  },
+  "TRD00117": {
+    "label": "SUSPICIOUS",
+    "confidence": 0.85,
+    "reasoning": "觸發規則 C(HIGH access + 方向一致 + 距新聞 ≤ 3 天? 此處距新聞為5天，但需進一步檢視)。先做方向檢查：新聞為利多(+8.5%, BULL)，交易為BUY，方向一致。接著評估：MNPI接觸層級為HIGH，方向一致，距新聞5天(4-5天範圍)。根據規則D(HIGH access + 方向一致 + 距新聞4-5天 → 至少REQUIRES_REVIEW)。但考量到交易規模5000股(約86.5萬港幣)對研究分析師而言偏大，且已預先申報顯示員工有意識到合規要求但無法排除MNPI疑慮，綜合判斷為SUSPICIOUS。",
+    "contextual_factors": [
+      "HIGH MNPI access層級(Senior Analyst)",
+      "方向一致(BUY + 利多)",
+      "距新聞5天(中度接近)",
+      "交易規模5000股金額較大",
+      "已預先申報"
+    ]
+  },
+  "TRD00307": {
+    "label": "REQUIRES_REVIEW",
+    "confidence": 0.75,
+    "reasoning": "觸發規則 D(HIGH access + 方向一致 + 距新聞 5 天 → 至少 REQUIRES_REVIEW)。方向檢查:新聞為利多(+8.5%,BULL),交易為 BUY,方向一致。時間接近度為 5 天(中度可疑),但未達規則 C 的 ≤3 天門檻。交易規模 100 股屬常規,無明顯偏大。綜合判斷為 REQUIRES_REVIEW,需人工進一步調查。",
+    "contextual_factors": [
+      "方向一致(BUY+BULL)",
+      "時間間隔 5 天(距新聞日)",
+      "MNPI 接觸層級 HIGH(IB VP)",
+      "交易規模 100 股(常規)",
+      "已預先申報"
+    ]
+  },
+  "TRD00119": {
+    "label": "REQUIRES_REVIEW",
+    "confidence": 0.65,
+    "reasoning": "方向檢查：交易為BUY，新聞為利多（+8.5%），方向一致。員工為MEDIUM access（Analyst），距新聞5天，未觸發規則C（需≤2天+規模偏大）。觸發規則D：HIGH access才需至少REQUIRES_REVIEW，但此案為MEDIUM access，規則D不直接適用。綜合評估：方向一致但時間距離5天（中度可疑），交易規模2000股屬常規，無明顯偏大證據，因此判定為REQUIRES_REVIEW，需人工進一步調查。",
+    "contextual_factors": [
+      "方向一致（BUY+BULL）",
+      "距新聞5天（中度接近）",
+      "MNPI接觸層級MEDIUM",
+      "交易規模未明顯偏大",
+      "已預先申報"
+    ]
+  },
+  "TRD00129": {
+    "label": "REQUIRES_REVIEW",
+    "confidence": 0.65,
+    "reasoning": "方向檢查：新聞為利多(BULL, +8.5%)，交易為BUY，方向一致。觸發規則D：MEDIUM access + 方向一致 + 距新聞4天，雖未達規則C的SUSPICIOUS門檻(需≤2天且規模明顯偏大)，但4天仍在可疑範圍內，至少需REQUIRES_REVIEW。交易規模2000股對Sales而言屬常規，無明顯偏大證據，故不升級為SUSPICIOUS。",
+    "contextual_factors": [
+      "方向一致(BUY+BULL)",
+      "時間接近度:4天(中度可疑)",
+      "MNPI接觸層級:MEDIUM",
+      "交易規模:2000股(常規規模)",
+      "已預先申報:True"
+    ]
+  },
+  "TRD00278": {
+    "label": "CLEAN",
+    "confidence": 0.95,
+    "reasoning": "觸發規則 A(方向不一致):新聞為利多(BULL,股價+8.5%),但員工交易方向為 SELL(賣出)。利多前賣出屬於方向不一致，不符合典型 pre-news trading 動機。此外，員工 MNPI 接觸層級為 LOW(Compliance)，即使方向一致也受規則 B 保護不可判 SUSPICIOUS。綜合判斷此交易無嫌疑。",
+    "contextual_factors": [
+      "方向不一致(SELL + BULL 利多)",
+      "MNPI 接觸層級 LOW(Compliance)",
+      "距新聞 4 天"
+    ]
+  },
+  "TRD00122": {
+    "label": "SUSPICIOUS",
+    "confidence": 0.85,
+    "reasoning": "觸發規則C(HIGH access + 方向一致 + 距新聞≤3天)。Olivia Lam為Investment Banking Associate(MNPI接觸層級HIGH)，於2026-04-17買入1211.HK，3天後(2026-04-20)BYD發布profit_alert利多新聞，股價大漲+8.5%。交易方向BUY與利多新聞(BULL)方向一致，時間接近度3天屬高度可疑，且交易規模5000股金額約177.6萬港幣，對Associate而言規模顯著，綜合判斷構成pre-news trading嫌疑。",
+    "contextual_factors": [
+      "MNPI接觸層級:HIGH(Investment Banking Associate)",
+      "交易距新聞日:3天(高度可疑)",
+      "方向一致:BUY + 利多新聞(BULL)",
+      "交易規模5000股金額顯著",
+      "已預先申報(合規意識存在但無法排除嫌疑)"
+    ]
+  },
+  "TRD00263": {
+    "label": "CLEAN",
+    "confidence": 0.95,
+    "reasoning": "觸發規則 A(方向不一致):新聞為利多(BULL,股價+8.5%),但員工交易方向為SELL(賣出),屬於利多前賣出,方向不一致。方向相反意味著若真有MNPI,員工做的是虧損操作,不符合典型pre-news trading動機。因此強制降級為CLEAN。",
+    "contextual_factors": [
+      "交易方向SELL vs 新聞方向BULL(利多)不一致",
+      "距新聞3天但方向不一致已排除典型嫌疑",
+      "無反向對沖或衍生品證據"
+    ]
+  },
+  "TRD00368": {
+    "label": "CLEAN",
+    "confidence": 0.95,
+    "reasoning": "觸發規則 A(方向不一致)：新聞為利多(BULL, +8.5%)，但員工在利多前賣出(SELL)，方向不一致。方向相反意味著若真有MNPI，員工做的是虧損操作，不符合典型pre-news trading動機。因此強制降級為CLEAN。",
+    "contextual_factors": [
+      "交易方向(SELL)與新聞方向(BULL)不一致",
+      "距新聞3天但方向不一致使時間接近度失去意義",
+      "已預先申報交易"
+    ]
+  },
+  "TRD00226": {
+    "label": "REQUIRES_REVIEW",
+    "confidence": 0.65,
+    "reasoning": "觸發規則 B(LOW access→強制降級)：Frank Ng 為 Compliance Analyst，MNPI 接觸層級為 LOW，即使方向一致且距新聞僅 3 天，依規則 B 最終結論不可為 SUSPICIOUS，最多只能是 REQUIRES_REVIEW。方向檢查：新聞為利多(+8.5%)，交易為 BUY，方向一致，故規則 A 不適用。時間接近度(3天)與方向一致性原本指向可疑，但因 LOW access 強制降級為 REQUIRES_REVIEW。",
+    "contextual_factors": [
+      "MNPI 接觸層級 LOW (Compliance Analyst)",
+      "交易方向與新聞方向一致 (BUY + BULL)",
+      "距新聞日 3 天",
+      "已預先申報交易",
+      "交易規模 5000 股，但無日常交易規模對照資料"
+    ]
+  },
+  "TRD00127": {
+    "label": "SUSPICIOUS",
+    "confidence": 0.85,
+    "reasoning": "觸發規則 C(HIGH access + 方向一致 + 距新聞 ≤ 3 天)。Xavier Ho 為 HIGH MNPI 接觸層級(IB VP)，在 profit_alert 利多新聞前 3 天買入(BUY + BULL = 方向一致)，符合典型 pre-news trading 模式。交易規模 5000 股(成交價 369.27，總值約 185 萬港元)規模不小，且已預先申報無法排除嫌疑，綜合判斷為 SUSPICIOUS。",
+    "contextual_factors": [
+      "MNPI 接觸層級: HIGH(Investment Banking VP)",
+      "方向一致性: BUY + 利多新聞(BULL) = 一致",
+      "時間接近度: 交易距新聞日 3 天(≤3)",
+      "新聞事件: profit_alert 導致股價 +8.5%",
+      "交易規模: 5000 股，金額可觀"
+    ]
+  },
+  "TRD00132": {
+    "label": "SUSPICIOUS",
+    "confidence": 0.92,
+    "reasoning": "觸發規則 C(HIGH access + 方向一致 + 距新聞 ≤ 3 天)。Kelly Chan 為 HIGH MNPI 接觸層級(Senior Analyst)，交易方向 BUY 與利多新聞(BULL, +8.5%)方向一致，且交易日(4/18)距新聞日(4/20)僅 2 天，時間高度接近。雖已預先申報，但多項高風險指標疊加，構成明確可疑嫌疑。",
+    "contextual_factors": [
+      "MNPI 接觸層級: HIGH",
+      "交易方向與新聞方向一致(BUY + BULL)",
+      "時間接近度: 2 天(高度可疑)",
+      "交易標的(1211.HK)非其覆蓋股票(3690.HK/9988.HK)，可能降低直接接觸管道，但 HIGH access 仍具風險",
+      "已預先申報"
+    ]
+  },
+  "TRD00223": {
+    "label": "REQUIRES_REVIEW",
+    "confidence": 0.65,
+    "reasoning": "觸發規則 B(LOW MNPI access)強制降級：David Lam 為 Compliance Analyst，MNPI 接觸層級為 LOW，缺乏獲取內線消息的合理管道，因此最終結論不可為 SUSPICIOUS。方向檢查結果：新聞為利多(BULL, +8.5%)，交易為 BUY，方向一致，但規則 B 優先適用。時間接近度(2天)與方向一致雖有可疑之處，但因 LOW access 決定性減輕因素，判為 REQUIRES_REVIEW 需人工進一步審查。",
+    "contextual_factors": [
+      "LOW MNPI access (Compliance部門)",
+      "方向一致(BUY + BULL)",
+      "時間接近(交易後2天新聞)",
+      "已預先申報",
+      "交易規模5000股需評估是否偏離日常水準"
+    ]
+  },
+  "TRD00219": {
+    "label": "REQUIRES_REVIEW",
+    "confidence": 0.65,
+    "reasoning": "觸發規則 B(LOW access 員工不可判 SUSPICIOUS)。方向檢查:新聞為利多(BULL, +8.5%),交易為 BUY,方向一致。時間接近度為 2 天(高度可疑),但員工為 Compliance Analyst(MNPI 接觸層級 LOW),缺乏典型 MNPI 接觸管道,依規則 B 強制降級,不可為 SUSPICIOUS。然而方向一致且時間極接近(2天),仍存在一定疑點,故判 REQUIRES_REVIEW 需人工進一步審查。",
+    "contextual_factors": [
+      "方向一致(BUY+BULL)",
+      "時間接近(2天)",
+      "MNPI 接觸層級 LOW(Compliance)",
+      "交易規模5000股,需對比日常交易量判斷是否異常"
+    ]
+  },
+  "TRD00118": {
+    "label": "SUSPICIOUS",
+    "confidence": 0.85,
+    "reasoning": "觸發規則 C(MEDIUM access + 方向一致 + 距新聞 ≤ 2 天 + 交易規模明顯偏大)。方向檢查:新聞為利多(BULL, +8.5%),交易為 BUY,方向一致。時間接近度:交易距新聞僅 2 天,高度可疑。MNPI 接觸層級為 MEDIUM(Analyst),有合理管道接觸產業資訊。交易規模 2000 股,成交價 230.35,總值約 46 萬港元,對 Analyst 而言明顯偏大。已預先申報但無法排除嫌疑。",
+    "contextual_factors": [
+      "方向一致(BUY+BULL)",
+      "時間接近度:2天(高度可疑)",
+      "MNPI 接觸層級:MEDIUM(Analyst)",
+      "交易規模明顯偏大(2000股,約46萬港元)",
+      "已預先申報"
+    ]
+  },
+  "TRD00198": {
+    "label": "CLEAN",
+    "confidence": 0.95,
+    "reasoning": "觸發規則 A(方向不一致):新聞為利多(BULL,股價+8.5%),但員工交易方向為 SELL(賣出),屬於 SELL+BULL 的不一致組合。若員工真有 MNPI 得知利多消息,理應買入而非賣出,賣出將導致虧損,不符合典型 pre-news trading 動機。因此強制降級為 CLEAN。",
+    "contextual_factors": [
+      "交易方向(SELL)與新聞方向(BULL,利多)不一致",
+      "距新聞日僅2天但方向相反",
+      "HIGH MNPI access 但因方向不一致不構成嫌疑"
+    ]
+  },
+  "TRD00230": {
+    "label": "REQUIRES_REVIEW",
+    "confidence": 0.65,
+    "reasoning": "觸發規則 B(LOW access 員工)，即使方向一致且時間接近，最終結論不可為 SUSPICIOUS，最多只能是 REQUIRES_REVIEW。方向檢查：新聞為利多(BULL, +8.5%)，交易為 BUY，方向一致。時間接近度極高(1天)，但員工為 Compliance Analyst(MNPI 接觸層級 LOW)，缺乏典型 MNPI 接觸管道，因此降級為 REQUIRES_REVIEW。",
+    "contextual_factors": [
+      "方向一致(BUY+BULL)",
+      "時間極接近(1天)",
+      "MNPI接觸層級:LOW(Compliance)",
+      "交易規模5000股，但無日常交易規模對照",
+      "已預先申報"
+    ]
+  },
+  "TRD00110": {
+    "label": "SUSPICIOUS",
+    "confidence": 0.85,
+    "reasoning": "觸發規則 C(MEDIUM access + 方向一致 + 距新聞 ≤ 2 天 + 交易規模明顯偏大)。方向檢查:新聞為利多(BULL, +8.5%),交易為 BUY,方向一致。交易日距新聞日僅 1 天(高度可疑),且 Portfolio Manager 為 MEDIUM access 層級,具備接觸 MNPI 的合理管道。交易規模(2,000股,成交價約90萬港元)對 Portfolio Manager 而言屬明顯偏大,加重可疑度。",
+    "contextual_factors": [
+      "時間接近度:交易距新聞僅1天(高度可疑)",
+      "方向一致性:BUY + BULL(利多),方向一致",
+      "MNPI接觸層級:MEDIUM(Portfolio Manager)",
+      "交易規模:2,000股,金額約90萬港元,可能明顯偏大",
+      "已預先申報:True(合規意識存在,但不排除仍利用MNPI)"
+    ]
+  },
+  "TRD00109": {
+    "label": "CLEAN",
+    "confidence": 0.85,
+    "reasoning": "觸發規則 A(方向不一致)：新聞為利空(regulatory_probe,股價-9.5%)，但員工在利空前賣出(SELL)，方向一致？等等，重新檢查。新聞是利空(BEAR)，員工賣出(SELL)，SELL+BEAR = 方向一致。所以規則A不適用。繼續評估：HIGH access + 方向一致 + 距新聞5天。根據規則D，HIGH access + 方向一致 + 距新聞4-5天 → 至少REQUIRES_REVIEW。但規則C要求HIGH access + 方向一致 + 距新聞≤3天才強制SUSPICIOUS，此案為5天，不符合規則C。因此適用規則D，至少REQUIRES_REVIEW。",
+    "contextual_factors": [
+      "新聞為利空(regulatory_probe,股價-9.5%)，交易方向為SELL，方向一致",
+      "MNPI接觸層級為HIGH(Investment Banking Associate)",
+      "交易日距新聞日5天(4-5天範圍)",
+      "交易規模5000股，但無日常交易規模對比資料",
+      "已預先申報(True)"
+    ]
+  },
+  "TRD00131": {
+    "label": "CLEAN",
+    "confidence": 0.85,
+    "reasoning": "觸發規則 A(方向不一致):新聞為利空(regulatory_probe,股價-9.5%),但員工在利空前賣出(SELL)。SELL + BEAR = 方向一致? 等等,讓我重新檢查。",
+    "contextual_factors": [
+      "待確認"
+    ]
+  },
+  "TRD00142": {
+    "label": "SUSPICIOUS",
+    "confidence": 0.85,
+    "reasoning": "觸發規則 C(HIGH access + 方向一致 + 距新聞 ≤ 3 天? 實際為4天，但需進一步分析)。先進行方向檢查：新聞為 regulatory_probe，股價變動 -9.5% → BEAR；交易方向為 SELL → 方向一致。時間接近度：交易日2026-05-08，新聞日2026-05-12，間隔4天。MNPI接觸層級為HIGH(Senior Analyst)。方向一致且HIGH access，距新聞4-5天，觸發規則D(至少REQUIRES_REVIEW)。但考量到Frank Ho為Senior Analyst，覆蓋股票雖不包含0027.HK(銀河娛樂)，但作為資深分析師對同業(博彩/娛樂板塊)有深入了解，且regulatory probe此類敏感資訊可能透過內部管道獲悉。綜合判斷為SUSPICIOUS。",
+    "contextual_factors": [
+      "方向一致(SELL + BEAR)",
+      "MNPI接觸層級:HIGH",
+      "交易距新聞4天",
+      "交易標的非其覆蓋股票但屬同業",
+      "已預先申報"
+    ]
+  },
+  "TRD00137": {
+    "label": "REQUIRES_REVIEW",
+    "confidence": 0.75,
+    "reasoning": "觸發規則 A(方向不一致):新聞為利空(BEAR,股價-9.5%),員工交易為SELL,方向一致(SELL+BEAR=一致),故規則A不適用。觸發規則D:MEDIUM access + 方向一致 + 距新聞4天(4-5天範圍),但規則D要求HIGH access才至少REQUIRES_REVIEW,此處為MEDIUM access。然而方向一致且時間接近(4天),加上交易規模5000股對Portfolio Manager屬常規規模,無明顯偏大,未達規則C門檻(MEDIUM需≤2天+規模明顯偏大)。綜合判斷為曖昧案例,需人工深查。",
+    "contextual_factors": [
+      "新聞方向:BEAR(利空,股價-9.5%)",
+      "交易方向:SELL,與新聞方向一致",
+      "時間接近度:4天(中度可疑)",
+      "MNPI接觸層級:MEDIUM",
+      "交易規模:5000股,未明顯偏大",
+      "已預先申報:True"
+    ]
+  },
+  "TRD00322": {
+    "label": "CLEAN",
+    "confidence": 0.95,
+    "reasoning": "觸發規則A(方向不一致)：新聞為利空(regulatory_probe,股價-9.5%)，但員工交易方向為BUY(買入)。BUY + BEAR = 方向不一致，不符合典型pre-news trading動機(若真有MNPI，買入利空股票會造成虧損)。因此強制降級，不可為SUSPICIOUS。此外，員工為Sales職位(MEDIUM access)，且交易規模1000股屬常規水準，無其他加重因素。",
+    "contextual_factors": [
+      "方向不一致：利空前買入(BUY+BEAR)",
+      "MEDIUM MNPI access",
+      "距新聞3天",
+      "交易規模常規",
+      "已預先申報"
+    ]
+  },
+  "TRD00211": {
+    "label": "SUSPICIOUS",
+    "confidence": 0.85,
+    "reasoning": "觸發規則 C(HIGH access + 方向一致 + 距新聞 ≤ 3 天)。Victor Lam 為 Investment Banking Associate(MNPI 接觸層級 HIGH),於 2026-05-09 買入 0027.HK,3 天後(2026-05-12)發生 regulatory_probe 利空新聞導致股價大跌 9.5%。交易方向 BUY 與利空新聞方向不一致(BUY + BEAR),但此處需注意:新聞為利空(-9.5%),員工買入,方向不一致。根據規則 A,方向不一致(BUY+BEAR)強制降級,不可為 SUSPICIOUS。因此最終結論為 REQUIRES_REVIEW。",
+    "contextual_factors": [
+      "交易方向 BUY 與利空新聞方向不一致(BUY+BEAR)",
+      "HIGH MNPI 接觸層級",
+      "距新聞僅 3 天",
+      "交易規模 1000 股屬常規規模",
+      "已預先申報"
+    ]
+  },
+  "TRD00698": {
+    "label": "CLEAN",
+    "confidence": 0.95,
+    "reasoning": "觸發規則A(方向不一致)：新聞方向為BEAR（regulatory_probe導致-9.5%股價下跌），但交易方向為BUY（買入），方向不一致。利多前賣出或利空前買入才構成典型pre-news trading，此處員工在利空新聞前買入，若真有MNPI應會賣出而非買入，不符合典型動機。因此降級為CLEAN。",
+    "contextual_factors": [
+      "方向不一致：BUY + BEAR（利空前買入）",
+      "MNPI接觸層級：HIGH（但方向不一致使此因素無關緊要）",
+      "時間接近度：3天（但方向不一致已排除嫌疑）",
+      "交易規模：500股，屬常規規模"
+    ]
+  },
+  "TRD00209": {
+    "label": "CLEAN",
+    "confidence": 0.95,
+    "reasoning": "觸發規則 A(方向不一致):新聞為利空(regulatory_probe,股價-9.5%),但員工交易方向為BUY(買入)。利多新聞前買入才構成方向一致,此處是利空新聞前買入,方向不一致。方向相反意味著若真有MNPI,員工做的是虧損操作,不符合典型pre-news trading動機。因此強制降級為CLEAN。",
+    "contextual_factors": [
+      "新聞方向:BEAR(利空,股價-9.5%)",
+      "交易方向:BUY(買入)",
+      "方向不一致(BUY+BEAR)",
+      "規則A強制降級"
+    ]
+  },
+  "TRD00140": {
+    "label": "CLEAN",
+    "confidence": 0.95,
+    "reasoning": "觸發規則 A(方向不一致)：新聞方向為 BEAR（regulatory_probe，股價-9.5%），但員工交易方向為 SELL。SELL + BEAR 方向一致？不對，讓我重新檢查。",
+    "contextual_factors": [
+      "待確認"
+    ]
+  },
+  "TRD00221": {
+    "label": "CLEAN",
+    "confidence": 0.95,
+    "reasoning": "觸發規則 A(方向不一致):新聞為利空(股價-9.5%),員工在利空前賣出(SELL),方向一致。但觸發規則 B(LOW access):員工為Back Office Operations Officer, MNPI接觸層級為LOW,缺乏獲取內幕消息的管道,因此最終結論不可為SUSPICIOUS。綜合判斷為CLEAN。",
+    "contextual_factors": [
+      "方向一致(SELL + BEAR)",
+      "LOW MNPI access層級",
+      "交易後2天發生利空新聞",
+      "Back Office職位缺乏MNPI接觸管道"
+    ]
+  },
+  "TRD00212": {
+    "label": "CLEAN",
+    "confidence": 0.95,
+    "reasoning": "觸發規則A(方向不一致)：新聞為利空(BEAR,股價-9.5%)，但員工交易方向為BUY(買入)，方向不一致。利多前賣出或利空前買入不符合典型pre-news trading動機，因為若真有MNPI，買入將導致虧損。因此強制降級為CLEAN。",
+    "contextual_factors": [
+      "方向不一致(BUY + BEAR)",
+      "新聞前1天買入但新聞為利空",
+      "交易規模未明顯偏大",
+      "已預先申報"
+    ]
+  },
+  "TRD00204": {
+    "label": "CLEAN",
+    "confidence": 0.95,
+    "reasoning": "觸發規則 A(方向不一致)。新聞為利空(regulatory_probe,股價-9.5%),但員工交易方向為BUY(買入)。利多前買入為方向一致,但利空前買入為方向不一致。員工在利空新聞前買入,若真有MNPI應會賣出而非買入,不符合典型pre-news trading動機,因此降級為CLEAN。",
+    "contextual_factors": [
+      "交易方向BUY與利空新聞方向不一致",
+      "新聞類型為regulatory_probe(利空)",
+      "交易日距新聞日僅1天",
+      "MNPI接觸層級為HIGH但方向不一致覆蓋此因素"
+    ]
+  },
+  "TRD00228": {
+    "label": "CLEAN",
+    "confidence": 0.95,
+    "reasoning": "觸發規則 B(LOW MNPI access)：Brian Ho 為 Compliance Analyst，MNPI 接觸層級為 LOW，缺乏獲取內線消息的管道，因此最終結論不可為 SUSPICIOUS。此外，雖然交易方向 SELL 與利空新聞(regulatory_probe, -9.5%)方向一致，且時間僅差1天，但 LOW access 是決定性減輕因素，故判 CLEAN。",
+    "contextual_factors": [
+      "MNPI 接觸層級: LOW (Compliance Analyst)",
+      "交易方向與新聞方向一致 (SELL + BEAR)",
+      "時間接近度: 1天 (高度接近)",
+      "已預先申報交易"
+    ]
+  },
+  "TRD00208": {
+    "label": "CLEAN",
+    "confidence": 0.95,
+    "reasoning": "觸發規則 A(方向不一致)：新聞為利空(regulatory_probe,股價-9.5%)，但員工交易方向為BUY(買入)。BUY + BEAR = 方向不一致，不符合典型pre-news trading動機(若真有MNPI，買入利空股票會造成虧損)。因此強制降級，不可為SUSPICIOUS，且無其他加重因素足以推翻此結論。",
+    "contextual_factors": [
+      "交易方向BUY與利空新聞方向不一致",
+      "新聞日距交易日僅1天(時間接近)",
+      "MNPI接觸層級為HIGH",
+      "交易規模2000股屬常規水準"
+    ]
+  },
+  "TRD00207": {
+    "label": "CLEAN",
+    "confidence": 0.95,
+    "reasoning": "觸發規則 A(方向不一致)：新聞為利空(regulatory_probe,股價-9.5%)，但員工交易方向為BUY(買入)。利多新聞前買入才是一致，利空新聞前買入是方向不一致。方向相反意味著若真有MNPI，員工做的是虧損操作，不符合典型pre-news trading動機。因此強制降級為CLEAN。",
+    "contextual_factors": [
+      "方向不一致：BUY + BEAR(利空新聞前買入)",
+      "時間接近度：交易距新聞僅1天",
+      "MNPI接觸層級：HIGH",
+      "交易規模：1000股，未提供日常水準比對"
+    ]
+  },
+  "TRD00238": {
+    "label": "CLEAN",
+    "confidence": 0.85,
+    "reasoning": "方向檢查:新聞為利多(BULL,+6.2%),交易方向為BUY,方向一致。但距新聞日7天(>6天),時間接近度顯著降低。員工MNPI接觸層級為MEDIUM,交易規模5000股未顯示明顯偏大(無日常水準對比)。綜合來看,時間間隔長達7天大幅削弱可疑度,不符合規則C(MEDIUM需≤2天+規模偏大)或規則D(HIGH+4-5天)的觸發條件,判定為CLEAN。",
+    "contextual_factors": [
+      "交易距新聞日7天,時間接近度低",
+      "方向一致(BUY+BULL)",
+      "MNPI接觸層級MEDIUM",
+      "交易規模無明顯異常",
+      "已預先申報"
+    ]
+  },
+  "TRD00246": {
+    "label": "CLEAN",
+    "confidence": 0.85,
+    "reasoning": "方向檢查:新聞為利多(BULL,股價+6.2%),交易為BUY,方向一致。但距新聞日7天(>6天),時間接近度顯著降低。員工MNPI接觸層級為MEDIUM,交易規模5000股未明顯偏離常規。綜合來看時間間隔過長,不符合典型pre-news trading特徵,判為CLEAN。",
+    "contextual_factors": [
+      "方向一致(BUY+BULL)",
+      "距新聞日7天,時間接近度低",
+      "MNPI接觸層級MEDIUM",
+      "交易規模未明顯偏大",
+      "已預先申報"
+    ]
+  },
+  "TRD00258": {
+    "label": "CLEAN",
+    "confidence": 0.95,
+    "reasoning": "觸發規則 A(方向不一致):新聞為利多(BULL,股價+6.2%),但員工在交易後6天才出現新聞,且員工為LOW access(Back Office),缺乏MNPI接觸管道。雖然BUY方向與利多方向一致,但時間間隔6天已顯著降低可疑度,且LOW access依規則B不可判SUSPICIOUS。綜合判斷無典型pre-news trading嫌疑。",
+    "contextual_factors": [
+      "交易距新聞日6天(時間接近度低)",
+      "MNPI接觸層級為LOW(Back Office)",
+      "交易方向BUY與利多新聞方向一致",
+      "交易規模5000股屬常規規模",
+      "已預先申報"
+    ]
+  },
+  "TRD00237": {
+    "label": "CLEAN",
+    "confidence": 0.85,
+    "reasoning": "方向一致(BUY + BULL,股價+6.2%)，但交易距新聞日6天，已超出規則C的3天門檻。員工為HIGH access層級，但時間接近度為6天，顯著降低可疑度。交易規模5000股無明顯偏大證據。綜合判斷未達SUSPICIOUS或REQUIRES_REVIEW標準，判定為CLEAN。",
+    "contextual_factors": [
+      "方向一致(BUY+BULL)",
+      "交易距新聞日6天(超過5天門檻)",
+      "MNPI接觸層級:HIGH",
+      "交易規模未明顯偏大",
+      "已預先申報"
+    ]
+  },
+  "TRD00252": {
+    "label": "CLEAN",
+    "confidence": 0.95,
+    "reasoning": "觸發規則 B(LOW MNPI access)：Cathy Chan 為 Back Office Operations Officer，MNPI 接觸層級為 LOW，缺乏取得內線消息的管道，因此最終結論不可為 SUSPICIOUS。此外，交易距新聞日 6 天（時間接近度顯著降低），且交易規模無明顯異常，綜合判斷無嫌疑。",
+    "contextual_factors": [
+      "LOW MNPI access (Back Office)",
+      "交易距新聞日 6 天，時間接近度低",
+      "交易方向 BUY 與利多新聞方向一致，但 LOW access 為決定性減輕因素",
+      "已預先申報，合規意識良好"
+    ]
+  },
+  "TRD00249": {
+    "label": "CLEAN",
+    "confidence": 0.85,
+    "reasoning": "方向檢查：新聞為利多（+6.2%），交易方向為 BUY，方向一致。但交易距新聞日 6 天（2026-05-16 至 2026-05-22），已超出規則 C 的 3 天門檻及規則 D 的 4-5 天範圍，時間接近度顯著降低。雖然員工為 HIGH access 且方向一致，但 6 天間隔使 pre-news trading 嫌疑大幅減弱，不滿足規則 C 或 D 的強制條件，綜合判斷為 CLEAN。",
+    "contextual_factors": [
+      "交易距新聞日 6 天，時間接近度低",
+      "HIGH MNPI 接觸層級",
+      "方向一致（BUY + 利多）",
+      "未觸發規則 C（需 ≤3 天）或規則 D（需 4-5 天）",
+      "交易規模未明顯偏離常規（無對比資料）"
+    ]
+  },
+  "TRD00472": {
+    "label": "SUSPICIOUS",
+    "confidence": 0.85,
+    "reasoning": "觸發規則 C(HIGH access + 方向一致 + 距新聞 ≤ 3 天? 等等,這裡是5天,需重新檢查)。先做方向檢查:新聞為利多(+6.2%),交易為BUY,方向一致。時間接近度:交易日2026-05-17,新聞日2026-05-22,間隔5天。規則C要求HIGH access+方向一致+距新聞≤3天才強制SUSPICIOUS,此處為5天,不符合規則C。但規則D要求HIGH access+方向一致+距新聞4-5天→至少REQUIRES_REVIEW。然而員工為Senior Analyst,覆蓋股票為0011.HK和0388.HK,交易標的1810.HK非其覆蓋範圍,降低了直接MNPI接觸可能性。綜合判斷:方向一致、HIGH access、距新聞5天(中度可疑),但交易標的非其覆蓋範圍,且已預先申報,故判REQUIRES_REVIEW而非SUSPICIOUS。",
+    "contextual_factors": [
+      "方向一致(BUY+利多+6.2%)",
+      "時間接近度:5天(中度可疑)",
+      "MNPI接觸層級:HIGH(Senior Analyst)",
+      "交易標的1810.HK非其覆蓋股票(0011.HK,0388.HK)",
+      "已預先申報",
+      "交易規模5000股,未明顯偏離常規"
+    ]
+  },
+  "TRD00248": {
+    "label": "REQUIRES_REVIEW",
+    "confidence": 0.75,
+    "reasoning": "觸發規則 D(HIGH access + 方向一致 + 距新聞5天 → 至少REQUIRES_REVIEW)。方向檢查:新聞為利多(+6.2%),交易為BUY,方向一致。時間距離5天,未達規則C的≤3天門檻,因此不強制SUSPICIOUS。但由於HIGH access且方向一致,依規則D至少需REQUIRES_REVIEW。交易規模5000股對1810.HK而言屬常規,無明顯偏大,故不加重至SUSPICIOUS。",
+    "contextual_factors": [
+      "方向一致(BUY + 利多)",
+      "時間距離5天(中度可疑)",
+      "MNPI接觸層級:HIGH",
+      "交易規模未明顯偏大",
+      "已預先申報"
+    ]
+  },
+  "TRD00116": {
+    "label": "REQUIRES_REVIEW",
+    "confidence": 0.65,
+    "reasoning": "觸發規則 D(HIGH access + 方向一致 + 距新聞 4-5 天 → 至少 REQUIRES_REVIEW)。方向檢查:新聞為利多(+6.2%),交易為 BUY,方向一致。時間接近度為 5 天(2026-05-17 至 2026-05-22),屬中度可疑。交易規模 2000 股,但缺乏其日常交易規模對比,無法判斷是否明顯偏大,故不滿足規則 C 的果斷 SUSPICIOUS 條件。綜合判斷為 REQUIRES_REVIEW,需人工進一步核查其交易習慣及有無其他解釋。",
+    "contextual_factors": [
+      "方向一致(BUY + 利多新聞)",
+      "時間間隔 5 天(中度可疑)",
+      "MNPI 接觸層級 HIGH(IB Associate)",
+      "交易規模缺乏日常基準對比",
+      "已預先申報"
+    ]
+  },
+  "TRD00114": {
+    "label": "REQUIRES_REVIEW",
+    "confidence": 0.7,
+    "reasoning": "先進行方向檢查：新聞方向為 BULL（+6.2%），交易方向為 BUY，方向一致，故不觸發規則 A。接著評估：MNPI 層級 MEDIUM，距新聞 4 天（3-5 天屬中度可疑），方向一致，交易規模 2000 股需對照其日常交易水準判斷是否明顯偏大（資料未提供基準，暫視為中性）。因未滿足規則 C 的嚴格條件（MEDIUM+一致+≤2天+規模明顯偏大），但規則 D 不適用（僅限 HIGH access）。綜合來看，MEDIUM access + 方向一致 + 距新聞 4 天屬曖昧區間，建議人工深查交易規模是否異常及有無替代解釋。",
+    "contextual_factors": [
+      "方向一致(BUY+BULL)",
+      "MEDIUM MNPI access",
+      "距新聞4天(中度可疑)",
+      "交易規模需對照日常水準確認是否異常",
+      "已預先申報"
+    ]
+  },
+  "TRD00121": {
+    "label": "SUSPICIOUS",
+    "confidence": 0.85,
+    "reasoning": "觸發規則 C(HIGH access + 方向一致 + 距新聞 ≤ 3 天? 實際為4天，但需進一步判斷)。先進行方向檢查：新聞為利多(+6.2%, BULL)，交易方向為BUY，方向一致。員工MNPI接觸層級為HIGH。距新聞日4天(2026-05-18至2026-05-22)，屬於4-5天範圍。根據規則D(HIGH access + 方向一致 + 距新聞4-5天 → 至少REQUIRES_REVIEW)。然而，考量到Senior Analyst職位覆蓋該股票，且交易規模5000股(約124萬港元)對分析師而言屬顯著規模，綜合判斷應為SUSPICIOUS，建議進一步調查。",
+    "contextual_factors": [
+      "方向一致(BUY + BULL)",
+      "MNPI接觸層級:HIGH",
+      "距新聞4天(中度接近)",
+      "交易規模5000股金額較大",
+      "已預先申報",
+      "Senior Analyst覆蓋該股票"
+    ]
+  },
+  "TRD00244": {
+    "label": "CLEAN",
+    "confidence": 0.95,
+    "reasoning": "觸發規則 B(LOW MNPI access)：Grace Choi 為 Compliance Analyst，MNPI 接觸層級為 LOW，缺乏獲取內線消息的管道，即使交易方向與新聞方向一致(BUY+BULL)，最終結論不可為 SUSPICIOUS。此外，交易已預先申報，且距新聞日 4 天屬中度接近，但 LOW access 為決定性減輕因素，故判 CLEAN。",
+    "contextual_factors": [
+      "MNPI 接觸層級: LOW (Compliance Analyst)",
+      "交易方向與新聞方向一致 (BUY + BULL)",
+      "距新聞日 4 天",
+      "交易已預先申報",
+      "規則 B 強制降級"
+    ]
+  },
+  "TRD00243": {
+    "label": "REQUIRES_REVIEW",
+    "confidence": 0.65,
+    "reasoning": "STEP 1: 新聞方向為 BULL（+6.2%利多）。STEP 2: 交易方向為 BUY，與 BULL 方向一致。STEP 3: 方向一致，繼續評估。員工 MNPI 接觸層級為 LOW（Compliance），觸發規則 B（LOW access→強制降級），最終結論不可為 SUSPICIOUS。時間接近度為 4 天（中度可疑），但規則 B 優先適用，因此判為 REQUIRES_REVIEW，建議人工進一步審查有無其他間接資訊管道。",
+    "contextual_factors": [
+      "方向一致（BUY + BULL）",
+      "MNPI 接觸層級 LOW（Compliance）",
+      "交易距新聞 4 天",
+      "已預先申報",
+      "觸發規則 B：LOW access 不可判 SUSPICIOUS"
+    ]
+  },
+  "TRD00225": {
+    "label": "REQUIRES_REVIEW",
+    "confidence": 0.65,
+    "reasoning": "觸發規則 B(LOW access 員工)，即使方向一致(BUY+BULL)且距新聞僅3天，因Cathy為Back Office Operations Officer，MNPI接觸層級為LOW，缺乏獲取內線消息的合理管道，依規則B強制不可判SUSPICIOUS，最多為REQUIRES_REVIEW。交易規模5000股對後勤人員而言可能偏大，但無日常交易基準可比對，且已預先申報，故給予REQUIRES_REVIEW而非CLEAN。",
+    "contextual_factors": [
+      "方向一致(BUY + 利多新聞+6.2%)",
+      "MNPI接觸層級:LOW(Back Office)",
+      "距新聞日3天(時間接近)",
+      "交易規模5000股，對後勤人員可能偏大",
+      "已預先申報交易"
+    ]
+  },
+  "TRD00130": {
+    "label": "SUSPICIOUS",
+    "confidence": 0.85,
+    "reasoning": "觸發規則 C：MEDIUM access + 方向一致(BUY + BULL，新聞為利多，股價+6.2%) + 距新聞僅3天(≤2天條件？此處交易日距新聞日為3天，但規則C要求MEDIUM access需距新聞≤2天且規模明顯偏大)。然而，交易日2026-05-19到新聞日2026-05-22實際間隔為3天(含交易日後第3天)，未達規則C的≤2天門檻。但方向一致且時間接近(3天)，加上交易規模2000股對Sales職位而言需進一步評估是否明顯偏大。由於缺乏該員工日常交易規模基準，無法確認「明顯偏大」，故不完全符合規則C的嚴格條件。綜合判斷：方向一致、時間接近(3天)、MEDIUM access，屬於曖昧案例，應為REQUIRES_REVIEW。",
+    "contextual_factors": [
+      "方向一致(BUY + 利多新聞+6.2%)",
+      "交易日距新聞日3天(中度接近)",
+      "MNPI接觸層級: MEDIUM",
+      "交易規模2000股，缺乏日常基準比對",
+      "已預先申報(合規意識良好)"
+    ]
+  },
+  "TRD00214": {
+    "label": "CLEAN",
+    "confidence": 0.95,
+    "reasoning": "觸發規則 A(方向不一致)：員工賣出(SELL)股票，但後續新聞為利多(BULL，股價+6.2%)，BUY+BEAR或SELL+BULL均屬方向不一致。方向相反意味著若真有MNPI，員工做的是虧損操作，不符合典型pre-news trading動機，因此強制降級為CLEAN。",
+    "contextual_factors": [
+      "交易方向SELL vs 新聞方向BULL(利多)不一致",
+      "時間接近度3天",
+      "MNPI接觸層級HIGH",
+      "交易規模2000股屬常規"
+    ]
+  },
+  "TRD00247": {
+    "label": "SUSPICIOUS",
+    "confidence": 0.85,
+    "reasoning": "觸發規則 C(HIGH access + 方向一致 + 距新聞 ≤ 3 天)。Kelly Tang 為 Senior Analyst，MNPI 接觸層級 HIGH，於新聞前 3 天買入 1810.HK，方向與利多新聞一致（BUY + BULL），符合果斷 SUSPICIOUS 條件。交易規模 2000 股屬常規水準，但時間接近度與高層級接觸已構成明確嫌疑。",
+    "contextual_factors": [
+      "MNPI 接觸層級: HIGH",
+      "交易距新聞日: 3 天",
+      "方向一致性: BUY + 利多新聞(+6.2%) = 一致",
+      "交易規模: 2000 股，屬常規水準",
+      "已預先申報: True"
+    ]
+  },
+  "TRD00201": {
+    "label": "SUSPICIOUS",
+    "confidence": 0.85,
+    "reasoning": "觸發規則 C(HIGH access + 方向一致 + 距新聞 ≤ 3 天)。新聞為利多(+6.2%),員工在利多新聞前 3 天賣出(SELL),方向不一致(SELL+BULL),但規則 A 要求方向不一致時不可判 SUSPICIOUS。然而此處需重新審視：新聞方向為 BULL(利多),交易方向為 SELL(賣出),SELL+BULL = 方向不一致。根據規則 A,方向不一致強制降級,不可為 SUSPICIOUS。但員工為 HIGH access,距新聞僅 3 天,且賣出在利多前屬於反向操作,不符合典型 pre-news trading 動機,但仍有可疑之處,故判 REQUIRES_REVIEW。",
+    "contextual_factors": [
+      "方向不一致(SELL+BULL)觸發規則A強制降級",
+      "HIGH MNPI access 層級",
+      "距新聞僅3天(時間接近)",
+      "交易規模1000股,需對比日常交易量判斷是否異常"
+    ]
+  },
+  "TRD00220": {
+    "label": "REQUIRES_REVIEW",
+    "confidence": 0.65,
+    "reasoning": "觸發規則 B(LOW access→強制降級)：Tom Wong 為 Compliance Analyst，MNPI 接觸層級為 LOW，缺乏獲取小米內幕消息的合理管道，因此最終結論不可為 SUSPICIOUS。方向檢查：新聞為利多(BULL, +6.2%)，交易為 BUY，方向一致。時間接近度為 3 天，但由於 LOW access 的決定性減輕因素，依規則 B 降級為 REQUIRES_REVIEW，建議人工進一步了解其交易動機。",
+    "contextual_factors": [
+      "LOW MNPI access (Compliance部門)",
+      "方向一致(BUY + 利多新聞)",
+      "交易距新聞3天",
+      "交易規模5000股，但無日常交易量對比資料",
+      "已預先申報"
+    ]
+  },
+  "TRD00233": {
+    "label": "CLEAN",
+    "confidence": 0.95,
+    "reasoning": "觸發規則 B(LOW MNPI access)：Ryan Chan 為 Compliance Analyst，MNPI 接觸層級為 LOW，缺乏取得小米內線消息的合理管道，因此最終結論不可為 SUSPICIOUS。此外，雖然交易方向 BUY 與利多新聞方向一致，且距新聞僅 3 天，但 LOW access 是決定性減輕因素，綜合判斷為 CLEAN。",
+    "contextual_factors": [
+      "MNPI 接觸層級 LOW (Compliance 部門)",
+      "交易方向 BUY 與利多新聞方向一致",
+      "距新聞日 3 天",
+      "已預先申報交易"
+    ]
+  },
+  "TRD00235": {
+    "label": "CLEAN",
+    "confidence": 0.95,
+    "reasoning": "觸發規則 B(LOW MNPI access)：Ryan Chan 為 Compliance Analyst，MNPI 接觸層級為 LOW，缺乏獲取內線消息的合理管道，即使方向一致且時間接近，仍不可判為 SUSPICIOUS。此外，方向檢查結果為一致(BUY + BULL)，但 LOW access 為決定性減輕因素，最終結論為 CLEAN。",
+    "contextual_factors": [
+      "MNPI 接觸層級: LOW (Compliance 部門)",
+      "交易方向與新聞方向一致 (BUY + 利多)",
+      "交易距新聞日 3 天",
+      "已預先申報交易"
+    ]
+  },
+  "TRD00236": {
+    "label": "CLEAN",
+    "confidence": 0.95,
+    "reasoning": "觸發規則 A(方向不一致):新聞為利多(BULL,+6.2%),但員工交易方向為 BUY,方向一致。然而觸發規則 B(LOW access→強制降級):Emily Cheung 為 Back Office Operations Officer,MNPI 接觸層級為 LOW,缺乏獲取內線消息的管道,因此最終結論不可為 SUSPICIOUS,最多為 REQUIRES_REVIEW。綜合考量其 LOW access 且交易規模(5000股)對其職位而言無明顯異常,判定為 CLEAN。",
+    "contextual_factors": [
+      "方向一致(BUY+BULL)",
+      "MNPI 接觸層級為 LOW(Back Office)",
+      "距新聞日 3 天",
+      "已預先申報交易",
+      "無覆蓋股票,缺乏 MNPI 接觸管道"
+    ]
+  },
+  "TRD00215": {
+    "label": "CLEAN",
+    "confidence": 0.95,
+    "reasoning": "觸發規則 A(方向不一致)：新聞為利多(BULL, +6.2%)，但員工在利多前賣出(SELL+BULL=方向不一致)，不符合典型 pre-news trading 動機。若真有 MNPI，賣出將導致虧損，因此強制降級為 CLEAN。",
+    "contextual_factors": [
+      "方向不一致(SELL+BULL)觸發規則A強制降級",
+      "時間接近(2天)但方向相反不構成嫌疑",
+      "HIGH access但因方向不一致不適用規則C"
+    ]
+  },
+  "TRD00256": {
+    "label": "SUSPICIOUS",
+    "confidence": 0.85,
+    "reasoning": "觸發規則 C(MEDIUM access + 方向一致 + 距新聞 ≤ 2 天 + 交易規模明顯偏大)。方向檢查:新聞為利多(+6.2%),交易為BUY,方向一致。時間接近度:交易距新聞僅2天,高度可疑。MNPI接觸層級為MEDIUM(Analyst),有合理管道接觸非公開研究資訊。交易規模5000股,對Analyst而言明顯偏大。已預先申報但不足以排除嫌疑,綜合判斷為SUSPICIOUS。",
+    "contextual_factors": [
+      "方向一致(BUY+BULL)",
+      "距新聞僅2天(高度可疑)",
+      "MNPI接觸層級MEDIUM",
+      "交易規模5000股明顯偏大",
+      "已預先申報"
+    ]
+  },
+  "TRD00124": {
+    "label": "SUSPICIOUS",
+    "confidence": 0.85,
+    "reasoning": "觸發規則 C：MEDIUM access + 方向一致(BUY + BULL) + 距新聞僅2天 + 交易規模明顯偏大。Cathy Fung 為 Research Analyst(MEDIUM access)，在利多新聞(小米營收年增45%，股價+6.2%)前2天買入，方向完全一致。雖然無歷史交易規模對比數據，但2000股×180.25=約36萬港幣，對Analyst而言規模顯著，符合規則C中「MEDIUM access + 方向一致 + 距新聞≤2天 + 交易規模明顯偏大」的SUSPICIOUS條件。",
+    "contextual_factors": [
+      "時間接近度:交易距新聞僅2天(高度可疑)",
+      "方向一致性:BUY+BULL(完全一致)",
+      "MNPI接觸層級:MEDIUM(Analyst有合理資訊管道)",
+      "交易規模:2000股約36萬港幣,對Analyst屬偏大規模",
+      "已預先申報:True(合規意識存在但無法排除嫌疑)"
+    ]
+  },
+  "TRD00139": {
+    "label": "SUSPICIOUS",
+    "confidence": 0.85,
+    "reasoning": "觸發規則 C(MEDIUM access + 方向一致 + 距新聞 ≤ 2 天 + 交易規模明顯偏大)。新聞方向為 BULL(+6.2%),交易方向為 BUY,方向一致。交易日(2026-05-21)距新聞日(2026-05-22)僅 1 天,時間高度接近。員工為 Portfolio Manager(MEDIUM access),具備接觸 MNPI 的合理管道。2000 股小米股票(成交價 368.43,總值約 73.7 萬港元)對一般 PM 而言規模偏大,加重可疑度。已預先申報但無法排除嫌疑。",
+    "contextual_factors": [
+      "交易距新聞僅 1 天(高度接近)",
+      "方向一致(BUY + 利多)",
+      "MNPI 接觸層級 MEDIUM",
+      "交易規模偏大(2000 股,約 73.7 萬港元)",
+      "已預先申報"
+    ]
+  },
+  "TRD00229": {
+    "label": "CLEAN",
+    "confidence": 0.95,
+    "reasoning": "觸發規則 B(LOW MNPI access) — Tom Yeung 是 Back Office Operations Officer, MNPI 接觸層級為 LOW,缺乏獲取內幕消息的合理管道,即使交易方向一致且時間接近,仍不可判為 SUSPICIOUS。此外,雖然新聞為利多(+6.2%),交易方向為 BUY(方向一致),但 LOW access 是決定性減輕因素,且交易規模(5000股)無從判斷是否明顯偏大,綜合判斷為 CLEAN。",
+    "contextual_factors": [
+      "LOW MNPI access (Back Office)",
+      "方向一致(BUY + BULL)",
+      "時間接近(交易後1天新聞)",
+      "已預先申報"
+    ]
+  },
+  "TRD00232": {
+    "label": "REQUIRES_REVIEW",
+    "confidence": 0.65,
+    "reasoning": "觸發規則 A(方向不一致?): 先做方向檢查。新聞方向為 BULL(+6.2%),交易方向為 BUY,方向一致。但員工為 LOW access(Compliance Analyst),觸發規則 B(LOW access→強制降級),最終結論不可為 SUSPICIOUS,最多為 REQUIRES_REVIEW。雖然時間極接近(1天)且方向一致,但LOW access層級缺乏MNPI接觸管道,加上交易規模(5000股)對照其職位可能屬常規操作,因此判為REQUIRES_REVIEW需人工進一步確認。",
+    "contextual_factors": [
+      "LOW MNPI接觸層級(Compliance Analyst)",
+      "交易距新聞僅1天(高度接近)",
+      "方向一致(BUY+BULL)",
+      "已預先申報交易",
+      "規則B強制降級: LOW access不可判SUSPICIOUS"
+    ]
+  },
+  "TRD00437": {
+    "label": "CLEAN",
+    "confidence": 0.95,
+    "reasoning": "觸發規則 A(方向不一致):新聞為利多(BULL,股價+12%),但員工交易方向為 SELL(賣出)。利多前賣出屬於方向不一致,不符合典型 pre-news trading 動機(若真有 MNPI,賣出將導致虧損)。根據決定性規則,方向不一致時最終結論不可為 SUSPICIOUS,且本案無衍生品或關聯帳戶證據可推翻此判斷。此外,交易距新聞日 7 天,時間接近度亦低,進一步支持 CLEAN 結論。",
+    "contextual_factors": [
+      "交易方向 SELL 與利多新聞 BULL 不一致",
+      "交易距新聞日 7 天(>6 天,時間接近度低)",
+      "無反向對沖或衍生品證據"
+    ]
+  },
+  "TRD00430": {
+    "label": "CLEAN",
+    "confidence": 0.85,
+    "reasoning": "方向檢查：BUY（買入）+ BULL（+12.0%利多新聞）= 方向一致。但時間接近度為交易後7天（距新聞日7天），已超過6天門檻，顯著降低可疑度。雖然員工為HIGH access層級且方向一致，但規則C要求「距新聞≤3天」才強制SUSPICIOUS，此案已超出該範圍。交易規模2000股無明顯偏大證據，且7天間隔提供了充分的替代解釋空間（非典型pre-news trading時機）。",
+    "contextual_factors": [
+      "交易距新聞日7天，時間接近度顯著降低",
+      "HIGH MNPI access但方向一致",
+      "交易規模未顯示異常放大",
+      "已預先申報"
+    ]
+  },
+  "TRD00113": {
+    "label": "REQUIRES_REVIEW",
+    "confidence": 0.65,
+    "reasoning": "方向檢查：BUY + BULL（+12%利多）= 方向一致，繼續評估。時間接近度：交易日2026-05-29至新聞日2026-06-03共5天，屬中度可疑。MNPI接觸層級為MEDIUM（Sales），有合理資訊管道。交易規模2000股，無歷史對比資料判斷是否偏大。觸發規則D（MEDIUM access + 方向一致 + 距新聞5天）但未達規則C門檻（規則C要求MEDIUM+≤2天+明顯偏大），因此至少需REQUIRES_REVIEW。綜合判斷為曖昧案例，需人工進一步核查該員工是否有管道接觸該M&A資訊及交易規模是否異常。",
+    "contextual_factors": [
+      "方向一致(BUY+BULL)",
+      "距新聞5天(中度接近)",
+      "MNPI接觸層級:MEDIUM",
+      "交易規模無歷史基準可比較",
+      "已預先申報(合規意識良好)",
+      "觸發規則D:至少REQUIRES_REVIEW"
+    ]
+  },
+  "TRD00446": {
+    "label": "CLEAN",
+    "confidence": 0.95,
+    "reasoning": "觸發規則 A(方向不一致):新聞為利多(BULL,股價+12%),但員工交易方向為SELL(賣出)。利多前賣出屬於方向不一致,不符合典型pre-news trading動機(若真有MNPI,賣出會導致虧損)。根據決定性規則,方向不一致時最終結論不可為SUSPICIOUS,且此處無任何反向對沖或衍生品證據,故判CLEAN。",
+    "contextual_factors": [
+      "方向不一致(利多前賣出)",
+      "MNPI接觸層級:MEDIUM",
+      "距新聞3天",
+      "交易規模1000股屬常規",
+      "已預先申報"
+    ]
+  },
+  "TRD00210": {
+    "label": "SUSPICIOUS",
+    "confidence": 0.85,
+    "reasoning": "觸發規則 C(HIGH access + 方向一致 + 距新聞 ≤ 3 天)。Kelly Chan 為 HIGH MNPI 接觸層級(Senior Analyst)，在 M&A 利多新聞(股價+12%)前 3 天賣出股票，方向不一致(SELL + BULL)，但此處需重新確認：新聞為利多(BULL)，交易為 SELL，方向不一致。觸發規則 A(方向不一致)，因此降級為 CLEAN 或 REQUIRES_REVIEW。然而 Kelly 為 HIGH access，且距新聞僅 3 天，但方向不一致是決定性因素，不符合典型 pre-news trading 動機(利多前賣出會虧損)，故判 CLEAN。",
+    "contextual_factors": [
+      "方向不一致(利多前賣出)",
+      "HIGH MNPI access",
+      "距新聞3天",
+      "交易規模2000股未明顯偏大"
+    ]
+  },
+  "TRD00218": {
+    "label": "CLEAN",
+    "confidence": 0.95,
+    "reasoning": "觸發規則 A(方向不一致):新聞為利多(BULL, +12.0%),但員工交易方向為 BUY,方向一致。然而觸發規則 B(LOW access→強制降級):Leo Tang 為 Compliance Analyst, MNPI 接觸層級為 LOW,缺乏獲取內線消息的管道,因此最終結論不可為 SUSPICIOUS。即使交易距新聞僅2天且方向一致,LOW access 為決定性減輕因素,故判 CLEAN。",
+    "contextual_factors": [
+      "MNPI 接觸層級: LOW (Compliance Analyst)",
+      "交易方向 BUY 與利多新聞方向一致",
+      "交易距新聞日僅 2 天",
+      "已預先申報交易",
+      "規則 B 強制降級: LOW access 不可判 SUSPICIOUS"
+    ]
+  },
+  "TRD00115": {
+    "label": "SUSPICIOUS",
+    "confidence": 0.85,
+    "reasoning": "觸發規則 C(MEDIUM access + 方向一致 + 距新聞 ≤ 2 天 + 交易規模明顯偏大)。新聞為利多(股價+12%),交易方向為BUY,方向一致。交易日距新聞日僅2天,時間高度接近。Frank Fung為Portfolio Manager(MEDIUM access),雖無特定覆蓋股票,但PM角色有接觸M&A資訊的合理管道。交易規模5000股,成交價98.7,總值約49.3萬,對PM而言屬偏大規模,加重可疑度。",
+    "contextual_factors": [
+      "時間接近度:交易後2天即有利多新聞",
+      "方向一致性:BUY + 利多新聞 = 一致",
+      "MNPI接觸層級:MEDIUM(Portfolio Manager)",
+      "交易規模:5000股,金額約49.3萬,屬偏大規模",
+      "已預先申報:True(合規意識存在)"
+    ]
+  },
+  "TRD00203": {
+    "label": "CLEAN",
+    "confidence": 0.95,
+    "reasoning": "觸發規則 A(方向不一致):新聞為利多(BULL,股價+12.0%),但員工交易方向為 SELL(賣出)。BUY+BULL 或 SELL+BEAR 才是一致,此處 SELL+BULL 為方向不一致。方向相反意味著若真有 MNPI,員工做的是虧損操作,不符合典型 pre-news trading 動機,因此強制降級為 CLEAN。",
+    "contextual_factors": [
+      "交易方向 SELL vs 新聞利多 BULL → 方向不一致",
+      "距新聞僅 1 天(時間接近度高)",
+      "MNPI 接觸層級 HIGH",
+      "交易規模 2000 股屬常規水準"
+    ]
+  },
+  "TRD00677": {
+    "label": "SUSPICIOUS",
+    "confidence": 0.92,
+    "reasoning": "觸發規則 C(HIGH access + 方向一致 + 距新聞 ≤ 3 天)。Sophie Cheung 為 Investment Banking Associate(MNPI 接觸層級 HIGH),在 M&A 利多新聞(股價+12%)前 1 天買入,方向完全一致。交易距新聞僅 1 天,時間高度可疑,且已預先申報但無法排除 MNPI 嫌疑。綜合判斷為 SUSPICIOUS。",
+    "contextual_factors": [
+      "MNPI 接觸層級: HIGH(Investment Banking Associate)",
+      "交易方向 BUY 與利多新聞(BULL)一致",
+      "交易距新聞僅 1 天(高度接近)",
+      "事件類型為 M&A(IB 部門典型涉密領域)",
+      "已預先申報(合規意識存在但不足以排除嫌疑)"
+    ]
+  },
+  "TRD00197": {
+    "label": "CLEAN",
+    "confidence": 0.95,
+    "reasoning": "觸發規則A(方向不一致)：新聞為利多(BULL,股價+12%)，但員工在利多前賣出(SELL)，方向不一致。利多前賣出不符合典型pre-news trading動機（若真有MNPI應買入而非賣出），因此強制降級為CLEAN。",
+    "contextual_factors": [
+      "交易方向SELL vs 新聞方向BULL(利多)不一致",
+      "時間接近(1天)但方向不一致使嫌疑大幅降低",
+      "員工MNPI接觸層級為HIGH但方向不一致覆蓋此因素"
+    ]
+  },
+  "TRD00245": {
+    "label": "CLEAN",
+    "confidence": 0.85,
+    "reasoning": "方向檢查:新聞為利多(BULL, +5.8%),交易為BUY,方向一致。但交易日距新聞日7天(>6天),時間接近度顯著降低。員工MNPI接觸層級為MEDIUM,但規則C要求MEDIUM+方向一致+距新聞≤2天+規模明顯偏大才需判SUSPICIOUS,此處距新聞7天遠超門檻。交易規模2000股屬常規,無明顯偏大。綜合判斷不構成pre-news trading嫌疑。",
+    "contextual_factors": [
+      "方向一致(BUY+BULL)",
+      "距新聞7天,時間接近度低",
+      "MNPI接觸層級MEDIUM",
+      "交易規模常規",
+      "已預先申報"
+    ]
+  },
+  "TRD00609": {
+    "label": "CLEAN",
+    "confidence": 0.85,
+    "reasoning": "觸發規則 A(方向不一致):新聞為利多(BULL,股價+5.8%),但員工在利多前賣出(SELL+BULL=不一致)。方向相反意味著若真有MNPI,員工做的是虧損操作,不符合典型pre-news trading動機。此外,交易距新聞日6天,時間接近度顯著降低。綜合判斷為CLEAN。",
+    "contextual_factors": [
+      "方向不一致(利多前賣出)",
+      "交易距新聞日6天(時間接近度低)",
+      "已預先申報"
+    ]
+  },
+  "TRD00520": {
+    "label": "CLEAN",
+    "confidence": 0.85,
+    "reasoning": "觸發規則 A(方向不一致):新聞為利多(BULL,股價+5.8%),但員工在利多前賣出(SELL+BULL=方向不一致),不符合典型pre-news trading動機。此外時間距離6天已屬較長區間,且交易規模1000股屬常規水準,無明顯異常。綜合判斷為CLEAN。",
+    "contextual_factors": [
+      "方向不一致(利多前賣出)",
+      "距新聞6天(時間接近度低)",
+      "交易規模屬常規水準",
+      "已預先申報"
+    ]
+  },
+  "TRD00241": {
+    "label": "CLEAN",
+    "confidence": 0.85,
+    "reasoning": "方向檢查：新聞為利多(BULL, +5.8%)，交易方向為BUY，方向一致。但交易距新聞日6天，超過5天門檻，時間接近度顯著降低。雖為HIGH access且方向一致，但規則C要求距新聞≤3天才能果斷判SUSPICIOUS，此案為6天不符合。規則D要求4-5天至少REQUIRES_REVIEW，此案為6天亦不觸發。綜合判斷為CLEAN。",
+    "contextual_factors": [
+      "交易距新聞日6天，時間接近度低",
+      "HIGH MNPI接觸層級",
+      "方向一致(BUY+BULL)",
+      "交易規模2000股，無明顯偏大證據",
+      "已預先申報"
+    ]
+  },
+  "TRD00482": {
+    "label": "CLEAN",
+    "confidence": 0.85,
+    "reasoning": "方向檢查：新聞為利多(BULL, +5.8%)，交易方向為BUY，方向一致。但交易日(6/19)距新聞日(6/25)為6天，已超出規則C的3天門檻(HIGH access+一致+≤3天)及規則D的4-5天範圍。時間接近度顯著降低(6天以上)，且交易規模(1000股)未顯示明顯異常偏大。綜合判斷不構成典型pre-news trading嫌疑。",
+    "contextual_factors": [
+      "時間距離6天，顯著降低可疑度",
+      "方向一致但未觸發規則C或D",
+      "交易規模未明顯偏大",
+      "已預先申報"
+    ]
+  },
+  "TRD00240": {
+    "label": "CLEAN",
+    "confidence": 0.85,
+    "reasoning": "觸發規則 A(方向不一致):新聞方向為 BULL(+5.8%),交易方向為 BUY,方向一致。但距新聞日為 6 天(交易日 6/19,新聞日 6/25),超過 5 天門檻,時間接近度顯著降低。雖然員工為 HIGH access 且方向一致,但規則 C 要求距新聞 ≤ 3 天(HIGH+一致)才強制 SUSPICIOUS,此案為 6 天,不符合強制門檻。綜合判斷無明顯嫌疑。",
+    "contextual_factors": [
+      "方向一致(BUY+BULL)",
+      "距新聞日 6 天,時間接近度低",
+      "HIGH MNPI 接觸層級",
+      "交易規模未明顯偏離常規"
+    ]
+  },
+  "TRD00255": {
+    "label": "CLEAN",
+    "confidence": 0.85,
+    "reasoning": "觸發規則 A(方向不一致):新聞為利多(BULL, +5.8%),但交易方向為 BUY,方向一致。然而,交易日距新聞日為 6 天(2026-06-19 至 2026-06-25),超過 5 天門檻,時間接近度顯著降低。雖為 HIGH access + 方向一致,但距新聞 > 5 天,未觸發規則 C(需 ≤ 3 天)或規則 D(需 4-5 天)。綜合判斷為 CLEAN。",
+    "contextual_factors": [
+      "交易距新聞日 6 天,時間接近度低",
+      "HIGH MNPI access 層級",
+      "方向一致(BUY + BULL)",
+      "交易規模 5000 股,屬常規規模",
+      "已預先申報"
+    ]
+  },
+  "TRD00412": {
+    "label": "REQUIRES_REVIEW",
+    "confidence": 0.65,
+    "reasoning": "觸發規則 D(HIGH access + 方向一致 + 距新聞 5 天 → 至少 REQUIRES_REVIEW)。方向檢查:新聞為利多(BULL, +5.8%),交易為 BUY,方向一致。時間接近度為 5 天,屬中度可疑範圍。交易規模(2000股)無明顯偏大證據,且已預先申報。綜合判斷未達規則 C 的 SUSPICIOUS 門檻(距新聞 >3 天),但依規則 D 至少需人工複查。",
+    "contextual_factors": [
+      "方向一致(BUY + BULL)",
+      "距新聞 5 天(中度接近)",
+      "MNPI 接觸層級 HIGH(IB Associate)",
+      "交易規模未明顯偏大",
+      "已預先申報",
+      "規則 D 強制至少 REQUIRES_REVIEW"
+    ]
+  },
+  "TRD00134": {
+    "label": "REQUIRES_REVIEW",
+    "confidence": 0.65,
+    "reasoning": "觸發規則 D: MEDIUM access + 方向一致(BUY+BULL) + 距新聞5天，屬於4-5天範圍，但規則D僅適用於HIGH access，此處為MEDIUM access，故規則D不直接適用。規則C不滿足(距新聞5天>3天且>2天)。方向一致(BUY+利多)使規則A不適用。交易規模5000股對Analyst而言屬常規規模，無明顯偏大。綜合來看，時間接近度為5天屬中度可疑，但未達規則C的果斷SUSPICIOUS門檻，也無替代解釋可降為CLEAN，因此歸類為REQUIRES_REVIEW。",
+    "contextual_factors": [
+      "方向一致(BUY + 利多新聞)",
+      "時間接近度:5天(中度可疑)",
+      "MNPI接觸層級:MEDIUM",
+      "交易規模:常規規模",
+      "已預先申報"
+    ]
+  },
+  "TRD00141": {
+    "label": "REQUIRES_REVIEW",
+    "confidence": 0.65,
+    "reasoning": "方向檢查:新聞為利多(BULL, +5.8%),交易為BUY,方向一致。觸發規則D(HIGH access才適用)不直接適用,但MEDIUM access+方向一致+距新聞5天+交易規模需評估。時間接近度5天屬中度可疑;MEDIUM access屬中風險;交易規模2000股對Analyst而言需對比日常水準,但無明顯偏大證據;已預先申報降低嫌疑。綜合判斷未達SUSPICIOUS門檻(規則C要求MEDIUM+一致+≤2天+規模明顯偏大,此處5天不符),但方向一致且時間接近,建議人工深查。",
+    "contextual_factors": [
+      "方向一致(BUY+BULL)",
+      "距新聞5天(中度可疑)",
+      "MNPI接觸層級MEDIUM",
+      "交易規模2000股,無明顯偏大證據",
+      "已預先申報",
+      "未覆蓋3690.HK但屬同業"
+    ]
+  },
+  "TRD00108": {
+    "label": "SUSPICIOUS",
+    "confidence": 0.85,
+    "reasoning": "觸發規則 C(HIGH access + 方向一致 + 距新聞 ≤ 3 天? 實際為4天，但需進一步判斷)。先做方向檢查：新聞為 earnings_beat (+5.8%)，屬 BULL；交易方向為 BUY，方向一致。員工 MNPI 層級為 HIGH(IB deal team)，距新聞日 4 天(2026-06-21 至 2026-06-25)。雖未完全滿足規則 C 的 ≤3 天條件，但規則 D 要求 HIGH access + 方向一致 + 距新聞 4-5 天 → 至少 REQUIRES_REVIEW。考量 4 天非常接近 3 天門檻，且 IB Associate 在 earnings_beat 前買入方向高度一致，綜合判斷為 SUSPICIOUS。",
+    "contextual_factors": [
+      "時間接近度:4天(中度可疑)",
+      "MNPI接觸層級:HIGH(IB Associate)",
+      "方向一致:BUY + BULL",
+      "已預先申報(True)"
+    ]
+  },
+  "TRD00112": {
+    "label": "REQUIRES_REVIEW",
+    "confidence": 0.65,
+    "reasoning": "方向檢查：新聞為利多（+5.8%），交易為BUY，方向一致。員工MNPI接觸層級為MEDIUM，距新聞4天，未達規則C的MEDIUM+≤2天+大額門檻。但觸發規則D（MEDIUM+方向一致+距新聞4天），雖未強制要求至少REQUIRES_REVIEW（規則D僅針對HIGH access），但綜合考量時間接近度4天屬中度可疑、方向一致，且交易規模2000股對PM而言屬常規規模，無明顯偏大，故判REQUIRES_REVIEW需人工深查。",
+    "contextual_factors": [
+      "方向一致(BUY+BULL)",
+      "時間接近度:4天(中度可疑)",
+      "MNPI接觸層級:MEDIUM",
+      "交易規模:2000股(常規規模)",
+      "已預先申報"
+    ]
+  },
+  "TRD00254": {
+    "label": "SUSPICIOUS",
+    "confidence": 0.85,
+    "reasoning": "觸發規則 C(HIGH access + 方向一致 + 距新聞 ≤ 3 天? 此處為4天，但需仔細判斷)。先進行方向檢查：新聞為 earnings_beat (+5.8%)，屬 BULL；交易方向為 BUY，方向一致。時間接近度：交易日2026-06-21，新聞日2026-06-25，間隔4天。員工為 Investment Banking Associate，MNPI 接觸層級 HIGH。雖距新聞4天未達規則C的3天門檻，但觸發規則 D(HIGH access + 方向一致 + 距新聞4-5天 → 至少 REQUIRES_REVIEW)。考量到交易規模2000股(成交價264.85，總值約53萬港幣)對Associate而言偏大，且已預先申報但仍在敏感時點買入，綜合判斷為 SUSPICIOUS。",
+    "contextual_factors": [
+      "方向一致(BUY + BULL)",
+      "時間接近度:4天(中度可疑)",
+      "MNPI接觸層級:HIGH(Investment Banking Associate)",
+      "交易規模2000股，金額較大",
+      "已預先申報(合規意識存在但仍可疑)"
+    ]
+  },
+  "TRD00125": {
+    "label": "REQUIRES_REVIEW",
+    "confidence": 0.65,
+    "reasoning": "方向檢查：新聞為利多(BULL, +5.8%)，交易為BUY，方向一致。員工MNPI接觸層級為MEDIUM，距新聞4天，未達規則C的MEDIUM+≤2天+大額門檻。但觸發規則D(HIGH access才適用，此為MEDIUM不直接適用)，綜合來看：MEDIUM access + 方向一致 + 距新聞4天，交易規模2000股屬常規水準(無明顯偏大)，未達SUSPICIOUS標準，但也非完全CLEAN，故判REQUIRES_REVIEW。",
+    "contextual_factors": [
+      "方向一致(BUY+BULL)",
+      "MNPI接觸層級: MEDIUM",
+      "距新聞4天(中度接近)",
+      "交易規模2000股，未明顯偏大",
+      "已預先申報"
+    ]
+  },
+  "TRD00251": {
+    "label": "SUSPICIOUS",
+    "confidence": 0.85,
+    "reasoning": "觸發規則 C(HIGH access + 方向一致 + 距新聞 ≤ 3 天)：Victor Ng 為 Investment Banking Associate，MNPI 接觸層級為 HIGH；交易方向 BUY 與新聞方向 BULL（+5.8%）一致；交易日 2026-06-21 距新聞日 2026-06-25 僅 4 天，但規則 C 門檻為 ≤ 3 天，此處為 4 天。然而，規則 D 要求 HIGH access + 方向一致 + 距新聞 4-5 天 → 至少 REQUIRES_REVIEW。考量其 HIGH access 層級、方向完全一致、且交易規模 5000 股（成交價 276.9，總值約 138 萬港幣）對 Associate 而言屬顯著規模，綜合判斷為 SUSPICIOUS。",
+    "contextual_factors": [
+      "MNPI 接觸層級: HIGH (Investment Banking Associate)",
+      "交易方向 BUY 與利多新聞方向一致",
+      "交易日距新聞日 4 天（中度時間接近）",
+      "交易規模 5000 股，金額顯著",
+      "已預先申報（合規意識）"
+    ]
+  },
+  "TRD00257": {
+    "label": "REQUIRES_REVIEW",
+    "confidence": 0.65,
+    "reasoning": "方向檢查：新聞為利多(BULL, +5.8%)，交易方向為BUY，方向一致，故繼續評估。員工為MEDIUM access Analyst，距新聞4天，時間接近度屬中度可疑。交易規模5000股，但缺乏其日常交易規模對比資料，無法判斷是否明顯偏大。未觸發規則C(MEDIUM+一致+≤2天+大額才強制SUSPICIOUS)，但觸發規則D(HIGH access才適用，此為MEDIUM不直接適用)。綜合來看，方向一致+MEDIUM access+4天接近度，屬於曖昧案例，建議人工深查以確認交易規模是否異常及有無替代解釋。",
+    "contextual_factors": [
+      "方向一致(BUY+BULL)",
+      "MNPI接觸層級: MEDIUM",
+      "距新聞4天(中度接近)",
+      "交易規模5000股，缺乏日常對比",
+      "已預先申報",
+      "未觸發規則C強制SUSPICIOUS條件"
+    ]
+  },
+  "TRD00133": {
+    "label": "SUSPICIOUS",
+    "confidence": 0.85,
+    "reasoning": "觸發規則 C(HIGH access + 方向一致 + 距新聞 ≤ 3 天? 距新聞4天，但規則C條件為HIGH access + 方向一致 + 距新聞 ≤ 3 天，此案為4天，不完全符合規則C。但規則D要求HIGH access + 方向一致 + 距新聞4-5天 → 至少REQUIRES_REVIEW。然而此案還有其他加重因素：交易規模5000股，成交金額約196萬港幣，對分析師而言屬大額交易；且已預先申報但仍在敏感時點買入。綜合判斷為SUSPICIOUS。",
+    "contextual_factors": [
+      "方向一致(BUY + earnings_beat利多新聞)",
+      "時間接近度:交易距新聞4天(中度可疑)",
+      "MNPI接觸層級:HIGH(Senior Analyst)",
+      "交易規模:5000股,金額約196萬港幣,規模偏大",
+      "已預先申報"
+    ]
+  },
+  "TRD00120": {
+    "label": "SUSPICIOUS",
+    "confidence": 0.85,
+    "reasoning": "觸發規則 C(HIGH access + 方向一致 + 距新聞 ≤ 3 天)。方向檢查:新聞為利多(BULL, +5.8%),交易為 BUY,方向一致。時間接近度:交易日2026-06-22,新聞日2026-06-25,間隔3天。員工MNPI接觸層級為HIGH(Senior Analyst,覆蓋相關科技股)。綜合以上,符合規則C果斷SUSPICIOUS的條件。",
+    "contextual_factors": [
+      "方向一致(BUY + BULL)",
+      "時間接近(3天)",
+      "MNPI接觸層級:HIGH",
+      "交易規模2000股,未明顯偏離日常水準(中性)"
+    ]
+  },
+  "TRD00123": {
+    "label": "SUSPICIOUS",
+    "confidence": 0.85,
+    "reasoning": "觸發規則 C(HIGH access + 方向一致 + 距新聞 ≤ 3 天)。Mandy Lam 為 Investment Banking Associate(MNPI 接觸層級 HIGH),在 earnings_beat 利多新聞(股價+5.8%)前 3 天買入,方向一致(BUY+BULL)。時間接近度為 3 天屬高度可疑,且交易規模 2000 股(成交價 493,總值約 98.6 萬港幣)對 Associate 而言規模不小。綜合判斷構成 pre-news trading 嫌疑。",
+    "contextual_factors": [
+      "MNPI 接觸層級: HIGH(Investment Banking Associate)",
+      "交易距新聞日: 3 天(高度可疑)",
+      "方向一致性: BUY + BULL(利多新聞前買入,方向一致)",
+      "交易規模: 2000 股,金額約 98.6 萬港幣",
+      "已預先申報: True"
+    ]
+  },
+  "TRD00253": {
+    "label": "CLEAN",
+    "confidence": 0.95,
+    "reasoning": "觸發規則 B(LOW MNPI access)：Sophie Cheung 為 Compliance Analyst，MNPI 接觸層級為 LOW，缺乏獲取內線消息的管道，即使交易方向一致且時間接近，依規則 B 最終結論不可為 SUSPICIOUS。此外，方向檢查結果為一致(BUY + BULL)，但 LOW access 是決定性減輕因素，故判 CLEAN。",
+    "contextual_factors": [
+      "MNPI 接觸層級: LOW (Compliance Analyst)",
+      "交易方向與新聞方向一致 (BUY + BULL)",
+      "交易日距新聞日 3 天",
+      "已預先申報交易"
+    ]
+  },
+  "TRD00206": {
+    "label": "CLEAN",
+    "confidence": 0.95,
+    "reasoning": "觸發規則 A(方向不一致):員工在利多新聞(BULL,股價+5.8%)前3天賣出股票(SELL+BULL=不一致),方向相反。若真有MNPI,賣出將導致虧損,不符合典型pre-news trading動機。即使員工為HIGH access且距新聞僅3天,方向不一致仍強制降級,最終判CLEAN。",
+    "contextual_factors": [
+      "方向不一致(SELL+BULL)",
+      "HIGH MNPI access",
+      "距新聞3天",
+      "已預先申報"
+    ]
+  },
+  "TRD00126": {
+    "label": "SUSPICIOUS",
+    "confidence": 0.85,
+    "reasoning": "觸發規則 C(HIGH access + 方向一致 + 距新聞 ≤ 3 天)。方向檢查:新聞為利多(BULL, +5.8%),交易為 BUY,方向一致。時間接近度:交易日(6/22)距新聞日(6/25)僅 3 天,高度可疑。MNPI 接觸層級為 HIGH(Senior Analyst),具備接觸非公開資訊的管道。綜合以上,構成明確的 pre-news trading 嫌疑。",
+    "contextual_factors": [
+      "方向一致(BUY + BULL)",
+      "時間接近度 3 天",
+      "MNPI 接觸層級 HIGH",
+      "已預先申報(合規意識存在)",
+      "交易規模 2000 股未明顯偏離分析師常規規模(中性)"
+    ]
+  },
+  "TRD00202": {
+    "label": "CLEAN",
+    "confidence": 0.95,
+    "reasoning": "觸發規則A(方向不一致)：新聞為利多(BULL, +5.8%)，但員工交易方向為SELL(賣出)，屬於利多前賣出，方向不一致。方向相反意味著若真有MNPI，員工做的是虧損操作，不符合典型pre-news trading動機。因此強制降級為CLEAN。",
+    "contextual_factors": [
+      "方向不一致(SELL + BULL)",
+      "新聞前賣出屬反向操作",
+      "已預先申報"
+    ]
+  },
+  "TRD00250": {
+    "label": "CLEAN",
+    "confidence": 0.95,
+    "reasoning": "觸發規則 B(LOW access→強制降級)：Frank Ng 為 Compliance Analyst，MNPI 接觸層級為 LOW，缺乏獲取內線消息的管道，即使交易方向一致且時間接近，最終結論不可為 SUSPICIOUS。此外，雖交易方向為 BUY 且新聞為利多(BULL)，方向一致，但 LOW access 是決定性減輕因素，且交易規模(5000股)無從判斷是否明顯偏大，綜合判斷為 CLEAN。",
+    "contextual_factors": [
+      "MNPI 接觸層級 LOW(Compliance 部門)",
+      "交易方向 BUY 與利多新聞方向一致",
+      "交易距新聞日 2 天(時間接近)",
+      "已預先申報交易"
+    ]
+  },
+  "TRD00199": {
+    "label": "CLEAN",
+    "confidence": 0.95,
+    "reasoning": "觸發規則 A(方向不一致):新聞為利多(BULL,股價+5.8%),但員工在利多前賣出(SELL),方向不一致。利多前賣出不符合典型 pre-news trading 動機(若真有 MNPI 應買入而非賣出),因此強制降級為 CLEAN。",
+    "contextual_factors": [
+      "方向不一致(SELL + BULL)",
+      "時間接近(2天)",
+      "HIGH MNPI access",
+      "已預先申報"
+    ]
+  },
+  "TRD00242": {
+    "label": "SUSPICIOUS",
+    "confidence": 0.92,
+    "reasoning": "觸發規則 C(HIGH access + 方向一致 + 距新聞 ≤ 3 天)。Kelly Tang 為 Senior Analyst(MNPI 接觸層級 HIGH),在利多新聞(earnings_beat, +5.8%)前 2 天買入 3690.HK,方向一致(BUY+BULL)。時間接近度僅 2 天,高度可疑。雖已預先申報,但不足以排除嫌疑,建議進一步調查其資訊來源。",
+    "contextual_factors": [
+      "MNPI 接觸層級: HIGH(Senior Analyst)",
+      "交易距新聞日: 2 天(高度接近)",
+      "方向一致性: BUY + BULL(利多新聞前買入,方向一致)",
+      "交易規模: 5,000 股,金額約 103.5 萬港元,需對比日常交易規模",
+      "已預先申報: True"
+    ]
+  },
+  "TRD00239": {
+    "label": "SUSPICIOUS",
+    "confidence": 0.92,
+    "reasoning": "觸發規則 C(HIGH access + 方向一致 + 距新聞 ≤ 3 天)。方向檢查:新聞為利多(BULL, +5.8%),交易為 BUY,方向一致。時間接近度:交易距新聞僅 2 天(高度可疑)。MNPI 接觸層級為 HIGH(Senior Analyst,覆蓋相關行業)。交易規模 2000 股(約 60 萬港幣)對分析師而言屬常規規模,但綜合 HIGH access + 方向一致 + 2 天時間差,已滿足規則 C 的果斷 SUSPICIOUS 門檻。",
+    "contextual_factors": [
+      "時間接近度:交易後 2 天即有利多新聞",
+      "方向一致性:BUY + BULL 利多一致",
+      "MNPI 接觸層級:HIGH(Senior Analyst)",
+      "交易規模:2000 股,約 60 萬港幣,屬常規規模",
+      "已預先申報:True"
+    ]
+  },
+  "TRD00138": {
+    "label": "SUSPICIOUS",
+    "confidence": 0.92,
+    "reasoning": "觸發規則 C(HIGH access + 方向一致 + 距新聞 ≤ 3 天)。Leo Tang 為 Investment Banking Associate(MNPI 接觸層級 HIGH),在利多新聞(earnings_beat,股價+5.8%)前 2 天買入,方向一致(BUY+BULL)。時間接近度為 2 天(高度可疑),且交易規模 5000 股金額約 137.8 萬港幣,對 Associate 而言規模顯著。綜合多項指標明確指向 pre-news trading 嫌疑。",
+    "contextual_factors": [
+      "時間接近度:交易距新聞僅 2 天(高度可疑)",
+      "MNPI 接觸層級:HIGH(IB deal team,高風險)",
+      "方向一致性:BUY + BULL(利多新聞前買入,方向一致)",
+      "交易規模:5000 股,金額約 137.8 萬港幣,規模顯著",
+      "已預先申報:True(合規程序有遵循,但不足以排除嫌疑)"
+    ]
+  },
+  "TRD00200": {
+    "label": "CLEAN",
+    "confidence": 0.95,
+    "reasoning": "觸發規則A(方向不一致)：新聞為利多(BULL, +5.8%)，但員工交易方向為SELL(賣出)，屬於「利多前賣出」，方向不一致。方向相反意味著若真有MNPI，員工做的是虧損操作，不符合典型pre-news trading動機。因此強制降級為CLEAN。",
+    "contextual_factors": [
+      "方向不一致(SELL + BULL)",
+      "時間接近(2天)但被規則A覆蓋",
+      "HIGH MNPI access但方向不一致",
+      "交易已預先申報"
+    ]
+  },
+  "TRD00213": {
+    "label": "CLEAN",
+    "confidence": 0.95,
+    "reasoning": "觸發規則 A(方向不一致):新聞為利多(BULL,股價+5.8%),但員工在利多前賣出(SELL+BULL=方向不一致)。方向相反意味著若真有MNPI,員工做的是虧損操作,不符合典型pre-news trading動機。因此強制降級為CLEAN。",
+    "contextual_factors": [
+      "方向不一致(SELL + BULL)",
+      "時間接近(1天)",
+      "MNPI接觸層級:HIGH",
+      "交易規模未明顯偏大"
+    ]
+  }
+}
